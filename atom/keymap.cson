@@ -1,0 +1,12 @@
+'.platform-linux atom-text-editor':
+  'alt-q': 'autoflow:reflow-selection'
+  'ctrl-d': 'find-and-replace:select-next'
+  'ctrl-shift-L': 'editor:split-selections-into-lines'
+
+'atom-workspace':
+  'alt-g b': 'unset!'
+  'alt-g c': 'unset!'
+  'alt-g g': 'unset!'
+  'alt-g h': 'unset!'
+  'alt-g o': 'unset!'
+  'alt-g r': 'unset!'

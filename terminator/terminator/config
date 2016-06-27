@@ -1,0 +1,21 @@
+[global_config]
+  focus = mouse
+  geometry_hinting = False
+  inactive_color_offset = 1.11
+[keybindings]
+  paste = <Primary>v
+[layouts]
+  [[default]]
+    [[[child1]]]
+      parent = window0
+      type = Terminal
+    [[[window0]]]
+      parent = ""
+      type = Window
+[plugins]
+[profiles]
+  [[default]]
+    background_image = None
+    scroll_on_output = False
+    scrollback_infinite = True
+    show_titlebar = False

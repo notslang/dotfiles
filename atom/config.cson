@@ -1,0 +1,87 @@
+"*":
+  Hydrogen:
+    kernelspec: "{\"kernelspecs\":{\"clojure\":{\"spec\":{\"display_name\":\"Clojure\",\"argv\":[\"/home/slang/.ipython/kernels/clojure/ipython-clojure\",\"{connection_file}\"],\"language\":\"clojure\",\"env\":{}},\"resource_dir\":\"/home/slang/.local/share/jupyter/kernels/clojure\"},\"python3\":{\"spec\":{\"display_name\":\"Python 3\",\"argv\":[\"/usr/bin/python3\",\"-m\",\"ipykernel\",\"-f\",\"{connection_file}\"],\"language\":\"python\",\"env\":{}},\"resource_dir\":\"/usr/lib/python3.5/site-packages/ipykernel/resources\"}}}"
+    startupCode: "{\"clojure\": \"(load \\\"worm/core\\\")\\n(in-ns 'worm.core)\"}"
+  "Sublime-Style-Column-Selection":
+    selectKeyTrigger: "Alt"
+  "atom-jsfmt":
+    formatOnSave: false
+  autocomplete:
+    includeCompletionsFromAllBuffers: true
+  "autocomplete-plus":
+    confirmCompletion: "tab"
+  autosave:
+    enabled: true
+  core:
+    autoHideMenuBar: true
+    disabledPackages: [
+      "background-tips"
+      "feedback"
+      "welcome"
+      "preview-tabs"
+    ]
+    themes: [
+      "proton"
+      "monokai"
+    ]
+  docblockr:
+    align_tags: "no"
+    per_section_indent: true
+  editor:
+    autoIndentOnPaste: false
+    fontFamily: "Inconsolata"
+    fontSize: 18
+    invisibles: {}
+    scrollPastEnd: true
+    showIndentGuide: true
+    showInvisibles: true
+    softWrap: true
+    zoomFontWhenCtrlScrolling: false
+  "exception-reporting":
+    userId: "b18af194-e2e7-7060-9309-b11148149769"
+  "file-icons": {}
+  "find-and-replace": {}
+  "highlight-selected": {}
+  "line-ending-converter":
+    normalizeEolOnSave: "Unix (LF)"
+  "line-ending-selector":
+    defaultLineEnding: "LF"
+  linter:
+    errorPanelHeight: 238
+    lintDebug: true
+    lintOnChange: false
+    lintOnFly: false
+  "linter-coffeelint":
+    coffeelintExecutablePath: "/usr/bin/coffeelint"
+  "linter-flow":
+    enableAll: true
+  "linter-php":
+    phpExecutablePath: "/usr/bin/php"
+  metrics:
+    userId: "4a189628cb0cef31c08a3a25d8f8ec996f663be3"
+  minimap:
+    displayPluginsControls: false
+    plugins: {}
+    scrollAnimation: true
+  "scroll-past-end": {}
+  tabs:
+    usePreviewTabs: true
+  "tidy-markdown":
+    runOnSave: false
+  wakatime:
+    apikey: "Saved in your ~/.wakatime.cfg file"
+  welcome:
+    showOnStartup: false
+  whitespace:
+    ignoreWhitespaceOnCurrentLine: false
+    keepMarkdownLineBreakWhitespace: false
+    removeTrailingWhitespace: true
+".clojure.source":
+  "bracket-matcher":
+    autocompleteBrackets: false
+".ini.source":
+  editor:
+    showIndentGuide: true
+".jade.source":
+  whitespace:
+    removeTrailingWhitespace: true

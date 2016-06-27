@@ -1,0 +1,7 @@
+[user]
+	email = slang800@gmail.com
+	name = Sean Lang
+[color]
+	ui = auto
+[push]
+	default = simple
