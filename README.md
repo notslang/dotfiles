@@ -33,3 +33,20 @@ To install the configs, clone this repo to the location of your choice, `cd` int
 If you don't want to install a particular set of config files, remove the corresponding line in `Makefile` and that directory will be omitted. For example, if you don't use [Atom](https://atom.io) you would remove the line `stow --target ~/.atom atom`.
 
 Note: Stow can only create a symlink if a config file does not already exist. If a default file was created upon program installation you must delete it first before you can install a new one with stow. This does not apply to directories, only files.
+
+# file structure
+
+I setup my home directories a little different from the default, because I have to type them often and I don't like to hit the `shift` key or type extra letters. The names I use are:
+
+- document (tax stuff, scanned recepts & contracts)
+- download
+- irclogs (logs from irssi)
+- junk (a pile of crap to be sorted through, usually called "Desktop")
+- music
+- picture
+- proj (for git repos / programming projects)
+- video
+
+I store all my documents on a separate partition (mounted at `/usrdata`) backed by some cheap HDDs and BTRFS software RAID, rather than the SSD that holds the rest of my Arch installation (mounted at `/`). Everything on the SSD is data that I can get by downloading an Arch ISO, a couple hundred packages, and cloning some git repos. None of it is backed up, mirrored in RAID, or snapshotted, since it's all publicly available on the internet and would be a waste of space & CPU-time to keep copies of. However, the `/usrdata` partition is snapshotted regularly with [snapper](http://snapper.io/), backed up, and mirrored with RAID 1+0, because it's stuff that I don't want to lose.
+
+I also have `~/proj` as a small BTRFS partition on an SSD, since it only holds git repos. I don't do any snapshotting or backups on this because all the git repos I have are synced to GitHub and/or GitLab. When the SSD that holds the partition fails, the only thing I will lose is uncommitted work, and I rarely have much of that. The use of BTRFS here is just so I can do file deduplication... With all the npm projects I work on, I have thousands of duplicated files in `node_modules` directories, which would add up to a few extra GB if they weren't deduplicated.
