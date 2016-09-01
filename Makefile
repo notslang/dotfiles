@@ -1,6 +1,7 @@
 install:
 	stow --target ~ git
 	stow --target ~ i3
+	stow --target ~ irc
 	stow --target ~ shell
 	stow --target ~/.atom atom
 	stow --target ~/.config clipit
