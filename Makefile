@@ -12,3 +12,4 @@ install:
 	stow --target ~/.config powerline
 	stow --target ~/.config terminator
 	stow --target ~/.lein lein
+	stow --target ~/.ssh ssh

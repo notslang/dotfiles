@@ -1,0 +1,16 @@
+Host coreos0
+    User core
+
+Host coreos1
+    User core
+
+Host coreos2
+    User core
+
+Host coreos3
+    User core
+
+Host alarmpi
+    User root
+
+AddKeysToAgent yes
