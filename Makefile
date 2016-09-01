@@ -1,4 +1,7 @@
 install:
+	ln -sf /usrdata/.{armory,bitcoin,gnupg,smartgit,ssh} -t ~
+	ln -sf /usrdata/{books,irclogs,resources} -t ~
+	ln -sf /usrdata/{document,download,junk,movie,music,picture,video} -t ~
 	stow --target ~ git
 	stow --target ~ i3
 	stow --target ~ irc
