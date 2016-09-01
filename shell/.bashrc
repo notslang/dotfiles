@@ -4,6 +4,7 @@
 alias ls='ls --color=auto'
 PS1='[\u@\h \W]\$ '
 
+export BROWSER=firefox
 export EDITOR=nano
 PATH="$(ruby -e 'print Gem.user_dir')/bin:$PATH"
 
