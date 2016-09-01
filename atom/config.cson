@@ -1,7 +1,6 @@
 "*":
   Hydrogen:
     kernelspec: "{\"kernelspecs\":{\"clojure\":{\"spec\":{\"display_name\":\"Clojure\",\"argv\":[\"/home/slang/.ipython/kernels/clojure/ipython-clojure\",\"{connection_file}\"],\"language\":\"clojure\",\"env\":{}},\"resource_dir\":\"/home/slang/.local/share/jupyter/kernels/clojure\"},\"python3\":{\"spec\":{\"display_name\":\"Python 3\",\"argv\":[\"/usr/bin/python3\",\"-m\",\"ipykernel\",\"-f\",\"{connection_file}\"],\"language\":\"python\",\"env\":{}},\"resource_dir\":\"/usr/lib/python3.5/site-packages/ipykernel/resources\"}}}"
-    startupCode: "{\"clojure\": \"(load \\\"worm/core\\\")\\n(in-ns 'worm.core)\"}"
   "Sublime-Style-Column-Selection":
     selectKeyTrigger: "Alt"
   "atom-jsfmt":
