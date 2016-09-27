@@ -22,7 +22,7 @@ for mount_point in ('/', '~/proj', '/usrdata', '/archive'):
 # Note: the network module requires PyPI package netifaces
 NETWORK_FORMAT = "{bytes_sent}MB/s⬆ {bytes_recv}MB/s⬇ IPv4: {v4cidr}, IPv6: \
 {v6cidr}"
-status.register('network', divisor=1048576, upper_limit=2000, round_size=2,
+status.register('network', divisor=1048576, round_size=2,
                 interface='enp7s0', format_up=NETWORK_FORMAT)
 
 status.run()
