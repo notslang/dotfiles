@@ -10,6 +10,15 @@ Host coreos2
 Host coreos3
     User core
 
+Host coreos4
+    User core
+
+Host coreos5
+    User core
+
+Host coreos6
+    User core
+
 Host alarmpi
     User root
 
