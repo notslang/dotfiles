@@ -1,9 +1,12 @@
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
+set -o noclobber
+alias cp='cp -i' # avoid overwriting files
 alias grep='grep --color=auto'
 alias ls='ls --color=auto'
 alias man='man --html' # show man pages in browser
+alias mv='mv -i' # avoid overwriting files
 PS1='[\u@\h \W]\$ '
 
 export BROWSER=firefox
