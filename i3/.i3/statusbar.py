@@ -2,6 +2,21 @@ from i3pystatus import Status
 
 status = Status(standalone=True)
 
+status.register(
+    'battery',
+    interval=5,
+    format='[{status} ]{percentage_design:.2f}%',
+    alert=True,
+    alert_percentage=15,
+    not_present_text='',
+    status = {
+        'DPL': 'dpl',
+        'CHR': 'chr',
+        'DIS': 'dis',
+        'FULL': '',
+    }
+)
+
 # ISO 8601 format
 status.register('clock', format='%Y-%m-%d %H:%M:%S')
 
