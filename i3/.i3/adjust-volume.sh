@@ -1,5 +1,5 @@
 #!/bin/sh
-SETVOL="/usr/bin/amixer -q -D pulse set Master"
+SETVOL="/usr/bin/amixer -q -D pulse sset Master"
 STEP=5
 case "$1" in
     "up")
@@ -13,8 +13,8 @@ case "$1" in
           ;;
 esac
 
-VOLUME=$(amixer get Master | grep "Playback.*\[.*%\]" | head -1 | awk '{print $4;}' | sed 's/\[\(.*\)%\]/\1/')
-STATE=$(amixer get Master | grep 'Mono:' | grep -o "\[on\]")
+VOLUME=$(amixer get Master | grep "Playback.*\[.*%\]" | head -1 | awk '{print $5;}' | sed 's/\[\(.*\)%\]/\1/')
+STATE=$(amixer get Master | grep 'Front Left:' | grep -o "\[on\]")
 
 # Show volume with volnoti
 if [[ -n $STATE ]]; then
