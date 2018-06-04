@@ -7,6 +7,7 @@ alias grep='grep --color=auto'
 alias ls='ls --color=auto'
 alias man='man --html' # show man pages in browser
 alias mv='mv -i' # avoid overwriting files
+alias diff='diff --color=auto'
 PS1='[\u@\h \W]\$ '
 
 export BROWSER=firefox
