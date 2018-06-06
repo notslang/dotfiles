@@ -11,5 +11,7 @@ install:
 	stow --target ~/.config desktop
 	stow --target ~/.config powerline
 	stow --target ~/.config terminator
-	stow --target ~/.lein lein
+	stow --target ~/.config rofi
+	stow --target ~/.config/systemd/user/ units
+	#stow --target ~/.lein lein
 	stow --target ~/.ssh ssh
