@@ -7,6 +7,20 @@
 
 set $mod Mod4
 
+for_window [class="^.*"] border pixel 2
+gaps inner 20
+gaps outer 5
+smart_borders on
+smart_gaps on
+
+# setup background image
+set $BACKGROUND /data/picture/background/synthwave-80s-neon.jpg
+exec --no-startup-id feh --bg-fill "$BACKGROUND"
+
+# lock screen
+exec --no-startup-id betterlockscreen -u $BACKGROUND -b 2
+bindsym $mod+l exec betterlockscreen --lock blur
+
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
@@ -108,8 +122,6 @@ bindsym XF86MonBrightnessUp exec xbacklight -inc 20 # increase
 bindsym XF86KbdBrightnessUp exec xbacklight -inc 10 # increase
 bindsym XF86MonBrightnessDown exec xbacklight -dec 20 # decrease
 bindsym XF86KbdBrightnessDown exec xbacklight -dec 10 # decrease
-
-bindsym $mod+l exec i3lock -c 000000
 
 # Media player controls
 bindsym XF86AudioPlay exec playerctl play
