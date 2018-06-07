@@ -1,4 +1,5 @@
 Host coreos0
+    HostName 10.0.0.100
     User core
 
 Host coreos1
@@ -8,18 +9,30 @@ Host coreos2
     User core
 
 Host coreos3
+    HostName 10.0.0.3
     User core
 
 Host coreos4
-    User core
-
-Host coreos5
-    User core
-
-Host coreos6
+    HostName 10.0.0.4
     User core
 
 Host alarmpi
     User root
+
+Host coreos5
+    HostName 198.211.110.94
+    User core
+
+Host coreos6
+    HostName 138.68.55.209
+    User core
+
+Host coreos7
+    HostName 159.89.92.57
+    User core
+
+Host coreos8
+    HostName 107.170.207.106
+    User core
 
 AddKeysToAgent yes
