@@ -15,10 +15,10 @@ smart_gaps on
 
 # setup background image
 set $BACKGROUND /data/picture/background/synthwave-80s-neon.jpg
-exec --no-startup-id feh --bg-fill "$BACKGROUND"
+exec_always --no-startup-id feh --bg-fill "$BACKGROUND"
 
 # lock screen
-exec --no-startup-id betterlockscreen -u $BACKGROUND -b 2
+exec_always --no-startup-id betterlockscreen -u $BACKGROUND -b 2
 bindsym $mod+l exec betterlockscreen --lock blur
 
 # Font for window titles. Will also be used by the bar unless a different font
