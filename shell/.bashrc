@@ -14,8 +14,8 @@ PS1='[\u@\h \W]\$ '
 export BROWSER=firefox
 export EDITOR=nano
 
-# save all commands to /usrdata/.bash-history.json
-export PROMPT_COMMAND='if [ "$(id -u)" -ne 0 ]; then echo "{\"time\":$(date +%s),\"pwd\":$(pwd | jq -M -R '.'),\"command\":$(history 1 | cut -c 8- | jq -M -R '.')}" >> /usrdata/.bash-history.json; fi'
+# save all commands to /data/.bash-history.json
+export PROMPT_COMMAND='if [ "$(id -u)" -ne 0 ]; then echo "{\"time\":$(date +%s),\"pwd\":$(pwd | jq -M -R '.'),\"command\":$(history 1 | cut -c 8- | jq -M -R '.')}" >> /data/.bash-history.json; fi'
 
 shopt -s globstar
 
