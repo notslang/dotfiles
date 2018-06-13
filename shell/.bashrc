@@ -12,7 +12,7 @@ alias mv='mv -i' # avoid overwriting files
 alias diff='diff --color=auto'
 alias less='less -N'
 
-export BROWSER=firefox
+export BROWSER=firefox-developer-edition
 export EDITOR=nano
 
 # save all commands to /data/.bash-history.json
