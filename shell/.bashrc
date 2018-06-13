@@ -11,7 +11,6 @@ alias man='man --html' # show man pages in browser
 alias mv='mv -i' # avoid overwriting files
 alias diff='diff --color=auto'
 alias less='less -N'
-PS1='[\u@\h \W]\$ '
 
 export BROWSER=firefox
 export EDITOR=nano
@@ -24,7 +23,13 @@ shopt -s globstar
 export LESSOPEN="| /usr/bin/source-highlight-esc.sh %s"
 export LESS='-R '
 
-powerline-daemon -q
-POWERLINE_BASH_CONTINUATION=1
-POWERLINE_BASH_SELECT=1
-. /usr/lib/python3.6/site-packages/powerline/bindings/bash/powerline.sh
+# Only setup powerline if we're running on a virtual terminal, where we can
+# expect a powerline compatible font to be loaded. I rarely use hardware ttys,
+# so it's not worth configuring compatible fonts for them.
+if [[ "$(tty)" == *"/dev/pts"* ]]; then
+  PS1='[\u@\h \W]\$ '
+  powerline-daemon -q
+  POWERLINE_BASH_CONTINUATION=1
+  POWERLINE_BASH_SELECT=1
+  . /usr/lib/python3.6/site-packages/powerline/bindings/bash/powerline.sh
+fi
