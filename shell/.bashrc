@@ -2,6 +2,7 @@
 [[ $- != *i* ]] && return
 
 set -o noclobber
+shopt -s globstar
 
 alias screenshot='maim -s > ~/picture/$(date +%s).png'
 alias cp='cp -i' # avoid overwriting files
@@ -10,18 +11,17 @@ alias ls='ls --color=auto'
 alias man='man --html' # show man pages in browser
 alias mv='mv -i' # avoid overwriting files
 alias diff='diff --color=auto'
+
+# enable line numbers and syntax highlighting in less
 alias less='less -N'
+export LESSOPEN="| /usr/bin/source-highlight-esc.sh %s"
+export LESS='-R '
 
 export BROWSER=firefox-developer-edition
 export EDITOR=nano
 
 # save all commands to /data/.bash-history.json
 export PROMPT_COMMAND='if [ "$(id -u)" -ne 0 ]; then echo "{\"time\":$(date +%s),\"pwd\":$(pwd | jq -M -R '.'),\"command\":$(history 1 | cut -c 8- | jq -M -R '.')}" >> /data/.bash-history.json; fi'
-
-shopt -s globstar
-
-export LESSOPEN="| /usr/bin/source-highlight-esc.sh %s"
-export LESS='-R '
 
 # Only setup powerline if we're running on a virtual terminal, where we can
 # expect a powerline compatible font to be loaded. I rarely use hardware ttys,
