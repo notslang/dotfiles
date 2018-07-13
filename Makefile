@@ -9,6 +9,7 @@ install:
 	stow --target ~/.atom atom
 	stow --target ~/.config clipit
 	stow --target ~/.config desktop
+	stow --target ~/.config greenclip
 	stow --target ~/.config powerline
 	stow --target ~/.config terminator
 	stow --target ~/.config rofi
