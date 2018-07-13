@@ -1,9 +1,0 @@
-[Unit]
-After=graphical.target
-Description=Clipboard manager
-
-[Service]
-ExecStart=/usr/bin/clipit
-
-[Install]
-WantedBy=default.target
