@@ -1,4 +1,7 @@
-install:
+fix-docker:
+	sudo gpasswd -a $$USER docker
+
+install: fix-docker
 	ln -sf /data/.{armory,bitcoin,gnupg,password-store,smartgit,ssh} -t ~
 	ln -sf /data/{books,irclogs,resources} -t ~
 	ln -sf /data/{document,download,junk,movie,music,picture,video} -t ~
