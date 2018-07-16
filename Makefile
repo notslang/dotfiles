@@ -11,6 +11,7 @@ install: fix-docker
 	stow --target ~ shell
 	stow --target ~/.atom atom
 	stow --target ~/.config clipit
+	rm ~/.config/mimeapps.list
 	stow --target ~/.config desktop
 	stow --target ~/.config greenclip
 	stow --target ~/.config powerline
