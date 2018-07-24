@@ -32,3 +32,12 @@ if [[ "$(tty)" == *"/dev/pts"* ]]; then
   POWERLINE_BASH_SELECT=1
   . /usr/lib/python3.6/site-packages/powerline/bindings/bash/powerline.sh
 fi
+
+[[ -f /usr/share/chruby/chruby.sh ]] && source /usr/share/chruby/chruby.sh
+
+export JAVA_HOME='/usr/lib/jvm/java-8-openjdk'
+export PATH=$JAVA_HOME/bin:$PATH
+export ANDROID_HOME='/opt/android-sdk'
+
+export GOPATH="$HOME/go"
+export PATH="$PATH:$GOPATH/bin"
