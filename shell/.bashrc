@@ -49,6 +49,7 @@ fi
 export JAVA_HOME='/usr/lib/jvm/java-8-openjdk'
 export PATH=$JAVA_HOME/bin:$PATH
 export ANDROID_HOME='/opt/android-sdk'
+export PATH=$ANDROID_HOME/platform-tools:$PATH
 
 export GOPATH="$HOME/go"
 export PATH="$PATH:$GOPATH/bin"
