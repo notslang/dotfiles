@@ -19,8 +19,19 @@ export LESS='-R '
 export BROWSER=firefox-developer-edition
 export EDITOR=nano
 
-# save all commands to /data/.bash-history.json
-export PROMPT_COMMAND='if [ "$(id -u)" -ne 0 ]; then echo "{\"time\":$(date +%s),\"pwd\":$(pwd | jq -M -R '.'),\"command\":$(history 1 | cut -c 8- | jq -M -R '.')}" >> /data/.bash-history.json; fi'
+# save all commands to /data/HOSTNAME-bash-history.json
+export PROMPT_COMMAND='(';
+PROMPT_COMMAND+='EXIT_CODE=$?;';
+PROMPT_COMMAND+='if [ "$(id -u)" -ne 0 ]; then ';
+PROMPT_COMMAND+='HISTORY_COMMAND=$(HISTTIMEFORMAT="%s " history 1);';
+PROMPT_COMMAND+='PARSED_COMMAND=$(echo $HISTORY_COMMAND | cut -d " " -f 3- | jq -M -R ".");';
+PROMPT_COMMAND+='if [[ $PARSED_COMMAND != "\"\"" ]]; then ';
+PROMPT_COMMAND+='COMMAND_NUMBER=$(echo $HISTORY_COMMAND | cut -d " " -f 1);';
+PROMPT_COMMAND+='COMMAND_TIME=$(echo $HISTORY_COMMAND | cut -d " " -f 2);';
+PROMPT_COMMAND+='WORKING_DIR=$(pwd | jq -M -R ".");';
+PROMPT_COMMAND+='echo "{\"time\":$COMMAND_TIME,\"pwd\":$WORKING_DIR,\"command\":$PARSED_COMMAND,\"exit_code\":$EXIT_CODE,\"command_number\":$COMMAND_NUMBER}" >> /data/$(hostname)-bash-history.json;';
+PROMPT_COMMAND+='fi ';
+PROMPT_COMMAND+='fi)';
 
 # Only setup powerline if we're running on a virtual terminal, where we can
 # expect a powerline compatible font to be loaded. I rarely use hardware ttys,
