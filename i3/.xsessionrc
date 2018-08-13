@@ -1,5 +1,3 @@
 if [ `hostname` = "erdos" ]; then
 	xkbcomp -I${HOME}/.xkb -R${HOME}/.xkb keymap/chromebook ${DISPLAY}
 fi
-
-setxkbmap -option caps:none

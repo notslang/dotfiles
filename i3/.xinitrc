@@ -6,5 +6,7 @@ xrandr --output DisplayPort-0 --mode 3840x2160_30.00
 
 [[ -f ~/.Xresources ]] && xrdb -merge -I$HOME ~/.Xresources
 
+# fix keyboard
+setxkbmap -option caps:none
 volnoti
 exec i3
