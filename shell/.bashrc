@@ -13,7 +13,7 @@ alias diff='diff --color=auto'
 
 # enable line numbers and syntax highlighting in less
 alias less='less -N'
-export LESSOPEN="| /usr/bin/source-highlight-esc.sh %s"
+export LESSOPEN='| /usr/bin/source-highlight-esc.sh %s'
 export LESS='-R '
 
 export BROWSER=firefox-developer-edition
