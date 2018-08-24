@@ -14,6 +14,7 @@ install: fix-docker
 	stow --target ~/.config alacritty
 	stow --target ~/.config desktop
 	stow --target ~/.config greenclip
+	stow --target ~/.config polybar
 	stow --target ~/.config powerline
 	stow --target ~/.config ranger
 	stow --target ~/.config rofi

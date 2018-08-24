@@ -17,6 +17,9 @@ smart_gaps on
 set $BACKGROUND /data/picture/background/synthwave-80s-neon.jpg
 exec_always --no-startup-id feh --bg-fill "$BACKGROUND"
 
+# polybar
+exec_always --no-startup-id /data/proj/dotfiles/polybar/polybar/launch.sh &
+
 # lock screen
 exec_always --no-startup-id betterlockscreen -u $BACKGROUND -b 2
 bindsym $mod+l exec betterlockscreen --lock blur
@@ -140,19 +143,3 @@ bindsym $mod+Control+Left exec --no-startup-id "bash ~/.i3/resize.sh left"
 bindsym $mod+Control+Down exec --no-startup-id "bash ~/.i3/resize.sh down"
 bindsym $mod+Control+Up exec --no-startup-id "bash ~/.i3/resize.sh up"
 bindsym $mod+Control+Right exec --no-startup-id "bash ~/.i3/resize.sh right"
-
-# Start i3bar to display a workspace bar (plus the system information i3status
-# finds out, if available)
-bar {
-  status_command python ~/.i3/statusbar.py
-  position bottom
-  workspace_buttons yes
-  #output DVI-0
-}
-
-#bar {
-#    position bottom
-#    workspace_buttons yes
-#    output DisplayPort-0
-#    output HDMI-0
-#}
