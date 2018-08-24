@@ -17,6 +17,8 @@ smart_gaps on
 set $BACKGROUND /data/picture/background/synthwave-80s-neon.jpg
 exec_always --no-startup-id feh --bg-fill "$BACKGROUND"
 
+exec_always --no-startup-id srandrd -e -n python /data/proj/dotfiles/srandrd/display-event.py
+
 # lock screen
 exec_always --no-startup-id betterlockscreen -u $BACKGROUND -b 2
 bindsym $mod+l exec betterlockscreen --lock blur
