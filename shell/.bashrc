@@ -41,7 +41,7 @@ if [[ "$(tty)" == *"/dev/pts"* ]]; then
   powerline-daemon -q
   POWERLINE_BASH_CONTINUATION=1
   POWERLINE_BASH_SELECT=1
-  . /usr/lib/python3.6/site-packages/powerline/bindings/bash/powerline.sh
+  . /usr/share/powerline/bindings/bash/powerline.sh
 fi
 
 [[ -f /usr/share/chruby/chruby.sh ]] && source /usr/share/chruby/chruby.sh
