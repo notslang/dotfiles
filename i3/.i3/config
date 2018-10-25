@@ -44,6 +44,9 @@ bindsym $mod+d exec rofi -show run
 # show clipboard history
 bindsym Control+Shift+v exec rofi -modi "clipboard:greenclip print" -show clipboard -run-command '{cmd}'
 
+# show unicode picker
+bindsym Control+Shift+u exec unipicker --command "rofi -dmenu -p unipicker" --copy-command "xclip -selection clipboard"
+
 # change focus
 bindsym $mod+Left focus left
 bindsym $mod+Down focus down
