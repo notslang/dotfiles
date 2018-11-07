@@ -11,10 +11,10 @@ install: fix-docker
 	stow --target ~ shell
 	stow --target ~/.atom atom
 	rm ~/.config/mimeapps.list
+	stow --target ~/.config alacritty
 	stow --target ~/.config desktop
 	stow --target ~/.config greenclip
 	stow --target ~/.config powerline
-	stow --target ~/.config terminator
 	stow --target ~/.config ranger
 	stow --target ~/.config rofi
 	stow --target ~/.config/systemd/user/ units
