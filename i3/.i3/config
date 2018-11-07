@@ -28,7 +28,7 @@ bindsym $mod+l exec betterlockscreen --lock blur
 # is used in the bar {} block below.
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
-font monospace
+font pango:monospace
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
