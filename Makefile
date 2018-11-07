@@ -6,7 +6,7 @@ install: fix-docker
 	ln -sf /data/{books,irclogs,resources} -t ~
 	ln -sf /data/{document,download,junk,movie,music,picture,video} -t ~
 	stow --target ~ git
-	stow --target ~ i3
+	stow --target ~ wm
 	stow --target ~ irc
 	stow --target ~ shell
 	stow --target ~/.atom atom
@@ -14,6 +14,7 @@ install: fix-docker
 	stow --target ~/.config alacritty
 	stow --target ~/.config desktop
 	stow --target ~/.config greenclip
+	stow --target ~/.config i3
 	stow --target ~/.config polybar
 	stow --target ~/.config powerline
 	stow --target ~/.config ranger
