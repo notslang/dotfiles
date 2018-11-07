@@ -15,6 +15,7 @@ install: fix-docker
 	stow --target ~/.config greenclip
 	stow --target ~/.config powerline
 	stow --target ~/.config terminator
+	stow --target ~/.config ranger
 	stow --target ~/.config rofi
 	stow --target ~/.config/systemd/user/ units
 	#stow --target ~/.lein lein
