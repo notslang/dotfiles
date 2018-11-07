@@ -17,6 +17,7 @@ install: fix-docker
 	stow --target ~/.config powerline
 	stow --target ~/.config ranger
 	stow --target ~/.config rofi
+	stow --target ~/.config fontconfig
 	stow --target ~/.config/systemd/user/ units
 	#stow --target ~/.lein lein
 	stow --target ~/.ssh ssh
