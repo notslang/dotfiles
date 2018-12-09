@@ -53,3 +53,4 @@ export PATH=$ANDROID_HOME/platform-tools:$PATH
 
 export GOPATH="$HOME/go"
 export PATH="$PATH:$GOPATH/bin"
+export W3MIMGDISPLAY_PATH="$HOME/.config/ranger/image-preview-hack.sh"
