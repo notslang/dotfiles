@@ -35,4 +35,5 @@ Host coreos8
     HostName 107.170.207.106
     User core
 
-AddKeysToAgent yes
+Host *
+    AddKeysToAgent yes
