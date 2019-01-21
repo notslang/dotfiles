@@ -18,6 +18,7 @@ export LESS='-R '
 
 export BROWSER=firefox-developer-edition
 export EDITOR=nano
+export TERMINAL=alacritty
 
 # save all commands to /data/HOSTNAME-bash-history.json
 export PROMPT_COMMAND='('
