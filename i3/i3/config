@@ -122,9 +122,9 @@ bindsym $mod+Shift+r restart
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 
 # Audio controls
-bindsym XF86AudioRaiseVolume exec "~/.i3/adjust-volume.sh up"
-bindsym XF86AudioLowerVolume exec "~/.i3/adjust-volume.sh down"
-bindsym XF86AudioMute exec "~/.i3/adjust-volume.sh mute"
+bindsym XF86AudioRaiseVolume exec "~/.config/i3/adjust-volume.sh up"
+bindsym XF86AudioLowerVolume exec "~/.config/i3/adjust-volume.sh down"
+bindsym XF86AudioMute exec "~/.config/i3/adjust-volume.sh mute"
 
 # Screen brightness controls
 bindsym XF86MonBrightnessUp exec xbacklight -inc 20 # increase
@@ -139,7 +139,7 @@ bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
 
 # resize window
-bindsym $mod+Control+Left exec --no-startup-id "bash ~/.i3/resize.sh left"
-bindsym $mod+Control+Down exec --no-startup-id "bash ~/.i3/resize.sh down"
-bindsym $mod+Control+Up exec --no-startup-id "bash ~/.i3/resize.sh up"
-bindsym $mod+Control+Right exec --no-startup-id "bash ~/.i3/resize.sh right"
+bindsym $mod+Control+Left exec --no-startup-id "bash ~/.config/i3/resize.sh left"
+bindsym $mod+Control+Down exec --no-startup-id "bash ~/.config/i3/resize.sh down"
+bindsym $mod+Control+Up exec --no-startup-id "bash ~/.config/i3/resize.sh up"
+bindsym $mod+Control+Right exec --no-startup-id "bash ~/.config/i3/resize.sh right"
