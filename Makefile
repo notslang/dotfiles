@@ -17,6 +17,7 @@ install: fix-docker
 	stow --target ~/.config desktop
 	stow --target ~/.config greenclip
 	stow --target ~/.config i3
+	stow --target ~/.config mpd
 	stow --target ~/.config polybar
 	stow --target ~/.config powerline
 	stow --target ~/.config ranger
