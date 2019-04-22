@@ -47,7 +47,7 @@ fi
 
 [[ -f /usr/share/chruby/chruby.sh ]] && source /usr/share/chruby/chruby.sh
 
-export JAVA_HOME='/usr/lib/jvm/java-8-openjdk'
+export JAVA_HOME='/usr/lib/jvm/default'
 export PATH=$JAVA_HOME/bin:$PATH
 export ANDROID_HOME='/opt/android-sdk'
 export PATH=$ANDROID_HOME/platform-tools:$PATH
