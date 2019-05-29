@@ -1,13 +1,16 @@
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
+[[ -f /usr/share/chruby/chruby.sh ]] && source /usr/share/chruby/chruby.sh
+
 set -o noclobber
 shopt -s globstar
 
 alias screenshot='maim -s > ~/picture/$(date +%s).png'
 alias cp='cp -i' # avoid overwriting files
 alias grep='grep --color=auto'
-alias ls='ls --color=auto'
+alias ls='exa'
+alias la='exa -lah --git'
 alias mv='mv -i' # avoid overwriting files
 alias diff='diff --color=auto'
 
@@ -45,8 +48,6 @@ if [[ "$(tty)" == *"/dev/pts"* ]]; then
   POWERLINE_BASH_SELECT=1
   . /usr/share/powerline/bindings/bash/powerline.sh
 fi
-
-[[ -f /usr/share/chruby/chruby.sh ]] && source /usr/share/chruby/chruby.sh
 
 export JAVA_HOME='/usr/lib/jvm/default'
 export PATH=$JAVA_HOME/bin:$PATH
