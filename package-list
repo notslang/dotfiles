@@ -3,7 +3,6 @@ source-highlight
 alsa
 alsa-firmware
 alsa-utils
-atom
 feh
 firefox-developer-edition
 git
@@ -53,4 +52,3 @@ ttf-impallari-raleway-family
 ttf-symbola
 screenkey
 duperemove
-

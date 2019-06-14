@@ -11,7 +11,6 @@ install: fix-docker
 	stow --target ~ wm
 	stow --target ~ irc
 	stow --target ~ shell
-	stow --target ~/.atom atom
 	rm ~/.config/mimeapps.list
 	stow --target ~/.config alacritty
 	stow --target ~/.config desktop
