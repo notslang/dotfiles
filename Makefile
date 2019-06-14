@@ -26,3 +26,4 @@ install: fix-docker
 	stow --target ~/.config/systemd/user/ units
 	#stow --target ~/.lein lein
 	stow --target ~/.ssh ssh
+	stow --target ~/.config nvim
