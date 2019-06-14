@@ -1,6 +1,5 @@
 "*":
-  Hydrogen:
-    kernelspec: "{\"kernelspecs\":{\"clojure\":{\"spec\":{\"display_name\":\"Clojure\",\"argv\":[\"/home/slang/.ipython/kernels/clojure/ipython-clojure\",\"{connection_file}\"],\"language\":\"clojure\",\"env\":{}},\"resource_dir\":\"/home/slang/.local/share/jupyter/kernels/clojure\"},\"python3\":{\"spec\":{\"display_name\":\"Python 3\",\"argv\":[\"/usr/bin/python3\",\"-m\",\"ipykernel\",\"-f\",\"{connection_file}\"],\"language\":\"python\",\"env\":{}},\"resource_dir\":\"/usr/lib/python3.5/site-packages/ipykernel/resources\"}}}"
+  Hydrogen: {}
   "Sublime-Style-Column-Selection":
     selectKeyTrigger: "Alt"
   "atom-jsfmt":
@@ -9,8 +8,14 @@
     includeCompletionsFromAllBuffers: true
   "autocomplete-plus":
     confirmCompletion: "tab"
+  "autocomplete-python":
+    showDescriptions: false
+    useKite: false
+    useSnippets: "all"
   autosave:
     enabled: true
+  "clang-format":
+    formatCPlusPlusOnSave: true
   core:
     autoHideMenuBar: true
     disabledPackages: [
@@ -18,18 +23,23 @@
       "feedback"
       "welcome"
       "preview-tabs"
+      "Hydrogen"
+      "atom-ide-ui"
+      "hyperclick"
+      "language-marko"
     ]
+    telemetryConsent: "no"
     themes: [
-      "proton"
-      "monokai"
+      "seti-ui"
+      "monokai-seti"
     ]
   docblockr:
     align_tags: "no"
     per_section_indent: true
   editor:
     autoIndentOnPaste: false
-    fontFamily: "Inconsolata"
-    fontSize: 18
+    fontFamily: "monospace"
+    fontSize: 19
     invisibles: {}
     scrollPastEnd: true
     showIndentGuide: true
@@ -40,29 +50,76 @@
     userId: "b18af194-e2e7-7060-9309-b11148149769"
   "file-icons": {}
   "find-and-replace": {}
+  "format-shell":
+    formatOnSave: true
   "highlight-selected": {}
   "line-ending-converter":
     normalizeEolOnSave: "Unix (LF)"
   "line-ending-selector":
     defaultLineEnding: "LF"
   linter:
-    errorPanelHeight: 238
     lintDebug: true
-    lintOnChange: false
-    lintOnFly: false
+    lintOnOpen: false
+  "linter-clang": {}
   "linter-coffeelint":
     coffeelintExecutablePath: "/usr/bin/coffeelint"
   "linter-flow":
     enableAll: true
+  "linter-gcc":
+    gccDebug: true
+    gccDefaultCFlags: "-c -Wall -std=c11"
+    gccDefaultCppFlags: "-c -Wall -std=c++14"
+    gccIncludePaths: "./"
+    gccLintOnTheFly: true
+  "linter-js-standard":
+    lintHtmlFiles: true
+    lintMarkdownFiles: true
   "linter-php":
     phpExecutablePath: "/usr/bin/php"
+  "linter-tslint":
+    fixOnSave: true
+  "linter-ui-default": {}
   metrics:
     userId: "4a189628cb0cef31c08a3a25d8f8ec996f663be3"
   minimap:
     displayPluginsControls: false
     plugins: {}
     scrollAnimation: true
+  "pretty-json":
+    prettifyOnSaveJSON: true
+  "regex-railroad-diagram": {}
   "scroll-past-end": {}
+  "seti-ui":
+    compactView: true
+    fileIcons: false
+  "spell-check":
+    excludedScopes: [
+      "meta.tag.structure"
+      "entity.name.inline"
+    ]
+    grammars: [
+      "source.asciidoc"
+      "source.gfm"
+      "text.git-commit"
+      "text.plain"
+      "text.plain.null-grammar"
+      "text.html.basic"
+      "text.html.elixir"
+    ]
+    locales: [
+      "en-US"
+    ]
+  "split-diff":
+    diffWords: true
+    ignoreWhitespace: true
+    leftEditorColor: "red"
+    rightEditorColor: "green"
+    scrollSyncType: "Vertical + Horizontal"
+    syncHorizontalScroll: true
+  "standard-formatter":
+    formatOnSave: true
+  "symbols-tree-view":
+    autoToggle: true
   tabs:
     usePreviewTabs: true
   "tidy-markdown":
@@ -75,6 +132,9 @@
     ignoreWhitespaceOnCurrentLine: false
     keepMarkdownLineBreakWhitespace: false
     removeTrailingWhitespace: true
+".c.source":
+  editor:
+    tabType: "soft"
 ".clojure.source":
   "bracket-matcher":
     autocompleteBrackets: false
