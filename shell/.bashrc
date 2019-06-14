@@ -36,7 +36,10 @@ PROMPT_COMMAND+='COMMAND_TIME=$(echo $HISTORY_COMMAND | cut -d " " -f 2);'
 PROMPT_COMMAND+='WORKING_DIR=$(pwd | jq -M -R ".");'
 PROMPT_COMMAND+='echo "{\"time\":$COMMAND_TIME,\"pwd\":$WORKING_DIR,\"command\":$PARSED_COMMAND,\"exit_code\":$EXIT_CODE,\"command_number\":$COMMAND_NUMBER}" >> /data/$(hostname)-bash-history.json;'
 PROMPT_COMMAND+='fi '
-PROMPT_COMMAND+='fi)'
+PROMPT_COMMAND+='fi);'
+
+# set window title
+PROMPT_COMMAND+='printf "\033]0;%s@%s:%s\007" "${USER}" "${HOSTNAME%%.*}" "${PWD/#$HOME/\~};"'
 
 # Only setup powerline if we're running on a virtual terminal, where we can
 # expect a powerline compatible font to be loaded. I rarely use hardware ttys,
