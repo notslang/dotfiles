@@ -57,6 +57,9 @@ export PATH=$JAVA_HOME/bin:$PATH
 export ANDROID_HOME='/opt/android-sdk'
 export PATH=$ANDROID_HOME/platform-tools:$PATH
 
+# Allow running locally installed node modules
+export PATH="$PATH:./node_modules/.bin"
+
 export GOPATH="$HOME/go"
 export PATH="$PATH:$GOPATH/bin"
 export W3MIMGDISPLAY_PATH="$HOME/.config/ranger/image-preview-hack.sh"
