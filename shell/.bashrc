@@ -64,5 +64,7 @@ export GOPATH="$HOME/go"
 export PATH="$PATH:$GOPATH/bin"
 export W3MIMGDISPLAY_PATH="$HOME/.config/ranger/image-preview-hack.sh"
 
+export FZF_DEFAULT_COMMAND='fd -H -E .git --type f'
+
 # remove open collective ads
 export DISABLE_OPENCOLLECTIVE=true
