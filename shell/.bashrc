@@ -63,3 +63,6 @@ export PATH="$PATH:./node_modules/.bin"
 export GOPATH="$HOME/go"
 export PATH="$PATH:$GOPATH/bin"
 export W3MIMGDISPLAY_PATH="$HOME/.config/ranger/image-preview-hack.sh"
+
+# remove open collective ads
+export DISABLE_OPENCOLLECTIVE=true
