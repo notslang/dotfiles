@@ -130,10 +130,10 @@ bindsym XF86MonBrightnessDown exec xbacklight -dec 20 # decrease
 bindsym XF86KbdBrightnessDown exec xbacklight -dec 10 # decrease
 
 # Media player controls
-bindsym XF86AudioPlay exec playerctl play
-bindsym XF86AudioPause exec playerctl pause
-bindsym XF86AudioNext exec playerctl next
-bindsym XF86AudioPrev exec playerctl previous
+bindsym XF86AudioPlay exec mpc play
+bindsym XF86AudioPause exec mpc pause
+bindsym XF86AudioNext exec mpc next
+bindsym XF86AudioPrev exec mpc prev
 
 # resize window
 bindsym $mod+Control+Left exec --no-startup-id "bash ~/.config/i3/resize.sh left"
