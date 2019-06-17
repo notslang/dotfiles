@@ -45,6 +45,10 @@ nmap <silent> <leader>p :Files<CR>
 nmap <silent> <C-p> :Files<CR>
 
 " ale
+let g:ale_sign_error = '✘'
+let g:ale_sign_warning = '⚠'
+highlight ALEErrorSign ctermbg=NONE ctermfg=red
+highlight ALEWarningSign ctermbg=NONE ctermfg=yellow
 let g:ale_linters = {}
 let g:ale_linters.elixir = ['elixir-ls']
 let g:ale_fix_on_save = 1
