@@ -25,6 +25,8 @@ set spellfile=$HOME/.vim/spell-en.utf-8.add
 let g:indentLine_char = '┆'
 
 call plug#begin('~/.vim/vim-plug')
+Plug 'https://github.com/tpope/vim-surround.git'
+Plug 'https://github.com/tpope/vim-sleuth.git'
 Plug 'https://github.com/tpope/vim-commentary.git'
 Plug 'https://github.com/editorconfig/editorconfig-vim.git'
 Plug 'https://github.com/janko/vim-test.git'
@@ -37,6 +39,7 @@ Plug 'https://github.com/sheerun/vim-polyglot'
 Plug 'https://github.com/vim-airline/vim-airline.git'
 Plug 'https://github.com/w0rp/ale.git'
 Plug 'https://github.com/nathangrigg/vim-beancount.git'
+Plug 'https://github.com/ryanoasis/vim-devicons.git'
 Plug 'https://github.com/ActivityWatch/aw-watcher-vim.git'
 call plug#end()
 
