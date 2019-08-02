@@ -2,6 +2,7 @@ fix-docker:
 	sudo gpasswd -a $$USER docker
 
 install: fix-docker
+	mkdir -p ~/.vim/{swap,undodir,backup,vim-plug}
 	ln -sf /data/.{armory,bitcoin,gnupg,password-store,ssh} -t ~
 	ln -sf /data/{book,irclogs,resources} -t ~
 	ln -sf /data/{document,download,junk,movie,music,picture,video,proj} -t ~
