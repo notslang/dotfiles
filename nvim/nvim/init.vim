@@ -90,6 +90,7 @@ let g:ale_fixers = {
 \   'elixir': ['mix_format'],
 \   'javascript': ['standard'],
 \   'scss': ['stylelint'],
+\   'ruby': ['rubocop'],
 \}
 let g:ale_elixir_elixir_ls_release = '/data/proj/forks/elixir-ls/rel'
 
