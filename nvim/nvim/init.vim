@@ -126,3 +126,6 @@ function! FzfSpell()
   return fzf#run({'source': suggestions, 'sink': function("FzfSpellSink"), 'down': 10 })
 endfunction
 nnoremap z= :call FzfSpell()<CR>
+
+" exclude junk from ctags
+let g:fzf_tags_command = 'rg --files | ctags -R --links=no -L -'
