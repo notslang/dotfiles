@@ -68,6 +68,10 @@ Plug 'https://github.com/vim-airline/vim-airline.git'
 Plug 'https://github.com/w0rp/ale.git'
 call plug#end()
 
+let g:vim_markdown_folding_disabled = 1
+let g:vim_markdown_conceal = 0
+let g:vim_markdown_conceal_code_blocks = 0
+
 " keyboard shortcuts
 nmap <silent> <leader>p :Files<CR>
 nmap <silent> <C-p> :Files<CR>
