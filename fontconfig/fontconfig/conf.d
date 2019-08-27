@@ -4,7 +4,7 @@
   <alias>
     <family>monospace</family>
     <prefer>
-      <family>InconsolataLGC Nerd Font</family>
+      <family>Hack Nerd Font Mono</family>
     </prefer>
   </alias>
 </fontconfig>
