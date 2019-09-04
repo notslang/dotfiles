@@ -21,6 +21,7 @@ i3pystatus
 iw
 massren
 memtest86-efi
+nerd-fonts-complete
 netdata
 nmcli
 openssh
@@ -34,10 +35,10 @@ python-netifaces
 python-psutil
 rofi
 rofi-greenclip
+rsync
 screenkey
 smartgit
 source-highlight
-terminator
 thunar
 thunar-archive-plugin
 thunar-media-tags-plugin
