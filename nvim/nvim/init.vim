@@ -1,5 +1,4 @@
 set encoding=utf-8
-colorscheme badwolf
 set number " show line numbers
 syntax enable " enable syntax highlighting
 set tabstop=4 " number of visual spaces per TAB
@@ -46,6 +45,7 @@ set complete+=kspell " Autocomplete with dictionary words when spell check is on
 set spellfile=$HOME/.vim/spell-en.utf-8.add
 
 call plug#begin('~/.vim/vim-plug')
+Plug 'https://github.com/morhetz/gruvbox.git'
 Plug 'https://github.com/ActivityWatch/aw-watcher-vim.git'
 Plug 'https://github.com/Yggdroot/indentLine.git'
 Plug 'https://github.com/airblade/vim-gitgutter.git'
@@ -65,6 +65,9 @@ Plug 'https://github.com/tpope/vim-surround.git'
 Plug 'https://github.com/vim-airline/vim-airline.git'
 Plug 'https://github.com/w0rp/ale.git'
 call plug#end()
+
+let g:gruvbox_contrast_dark = 'hard'
+colorscheme gruvbox
 
 let g:indentLine_char = ''
 
