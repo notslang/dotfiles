@@ -45,7 +45,6 @@ set complete+=kspell " Autocomplete with dictionary words when spell check is on
 set spellfile=$HOME/.vim/spell-en.utf-8.add
 
 call plug#begin('~/.vim/vim-plug')
-Plug 'https://github.com/morhetz/gruvbox.git'
 Plug 'https://github.com/ActivityWatch/aw-watcher-vim.git'
 Plug 'https://github.com/Yggdroot/indentLine.git'
 Plug 'https://github.com/airblade/vim-gitgutter.git'
@@ -54,6 +53,7 @@ Plug 'https://github.com/janko/vim-test.git'
 Plug 'https://github.com/junegunn/fzf.git'
 Plug 'https://github.com/junegunn/fzf.vim.git'
 Plug 'https://github.com/mbbill/undotree.git'
+Plug 'https://github.com/morhetz/gruvbox.git'
 Plug 'https://github.com/nathangrigg/vim-beancount.git'
 Plug 'https://github.com/ryanoasis/vim-devicons.git'
 Plug 'https://github.com/sheerun/vim-polyglot'
