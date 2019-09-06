@@ -1,12 +1,9 @@
 set encoding=utf-8
 set number " show line numbers
-syntax enable " enable syntax highlighting
 set tabstop=4 " number of visual spaces per TAB
 set softtabstop=4 " number of spaces in tab when editing
 set expandtab " tabs are spaces
 set cursorline " highlight current line
-filetype indent on " load filetype-specific indent files
-set wildmenu " visual autocomplete for command menu
 set lazyredraw " redraw only when we need to
 set showmatch " highlight matching [{()}]
 set shortmess+=I " remove startup message
@@ -60,6 +57,7 @@ Plug 'https://github.com/sheerun/vim-polyglot'
 Plug 'https://github.com/tpope/vim-abolish.git'
 Plug 'https://github.com/tpope/vim-commentary.git'
 Plug 'https://github.com/tpope/vim-fugitive.git'
+Plug 'https://github.com/tpope/vim-sensible.git'
 Plug 'https://github.com/tpope/vim-sleuth.git'
 Plug 'https://github.com/tpope/vim-surround.git'
 Plug 'https://github.com/vim-airline/vim-airline.git'
@@ -95,8 +93,6 @@ let g:ale_fixers = {
 \}
 let g:ale_elixir_elixir_ls_release = '/data/proj/forks/elixir-ls/rel'
 
-" airline
-set ttimeoutlen=50
 set noshowmode " mode is shown by airline
 
 if !exists('g:airline_symbols')
