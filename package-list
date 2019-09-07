@@ -30,6 +30,7 @@ iw
 jq
 keybase
 massren
+meld
 memtest86-efi
 mpd
 ncdu
@@ -39,6 +40,8 @@ net-tools
 netdata
 nmap
 nmcli
+nodejs
+npm
 openssh
 parted
 pass
@@ -59,15 +62,18 @@ rsync
 screenkey
 smartgit
 source-highlight
+sshfs
 thunar
 thunar-archive-plugin
 thunar-media-tags-plugin
 thunar-volman
+tor-browser
 ttf-impallari-raleway-family
 ttf-symbola
 vim-plug
 vlc
 wget
+whois
 wireless_tools
 wpa_supplicant
 xorg-server
