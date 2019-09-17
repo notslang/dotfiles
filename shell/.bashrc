@@ -20,8 +20,8 @@ export LESSOPEN='| /usr/bin/source-highlight-esc.sh %s'
 export LESS='-R '
 
 export BROWSER=firefox-developer-edition
-export EDITOR=vim
-export VISUAL=vim
+export EDITOR=nvim
+export VISUAL=nvim
 export TERMINAL=alacritty
 
 # save all commands to /data/HOSTNAME-bash-history.json
