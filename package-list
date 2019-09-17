@@ -43,6 +43,7 @@ massren
 meld
 memtest86-efi
 mlocate
+moreutils
 mpd
 mycli
 mysql-workbench
@@ -74,7 +75,6 @@ rsync
 screenkey
 smartgit
 source-highlight
-sponge
 sshfs
 thunar
 thunar-archive-plugin
