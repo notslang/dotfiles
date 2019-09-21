@@ -120,7 +120,7 @@ label = "RAM %gb_used%/%gb_free%"
 
 [module/wlan]
 type = internal/network
-interface = wlp3s0
+interface = ${env:WIRELESS_INTERFACE:}
 interval = 3.0
 
 format-connected = <label-connected>
