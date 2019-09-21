@@ -1,5 +1,4 @@
 [colors]
-;background = ${xrdb:color0}
 background = #00000000
 background-alt = #444
 foreground = ${xrdb:color7}
@@ -8,8 +7,6 @@ primary = ${xrdb:color3}
 secondary = ${xrdb:color5}
 alert = #bd2c40
 col = #00f
-;fg = ${xrdb:color7}
-;bg = ${xrdb:color2}
 
 [bar/top]
 monitor = ${env:MONITOR:}
@@ -104,25 +101,6 @@ label-visible-padding = ${self.label-focused-padding}
 [module/mpd]
 type = internal/mpd
 format-online = <label-song> <label-time>
-#<icon-prev> <toggle> <icon-next>
-#<toggle>
-
-icon-prev = 
-icon-stop = 
-icon-play = 
-icon-pause = 
-icon-next = 
-#icon-prev = <-
-#icon-stop = X
-#icon-play-prefix = #f00
-#icon-play = (Paused)
-#icon-pause =
-#icon-next = ->
-
-;bar-progress-width = 45
-;bar-progress-indicator = |
-;bar-progress-fill = -
-;bar-progress-empty = -
 
 label-song =  %artist% - %title%
 label-song-maxlen = 70
@@ -131,7 +109,6 @@ label-song-ellipsis = true
 [module/cpu]
 type = internal/cpu
 interval = 2
-;format-prefix = " "
 format-prefix-foreground = ${colors.foreground-alt}
 format-underline = ${xrdb:color1}
 label = %percentage%%
@@ -140,35 +117,18 @@ label = %percentage%%
 type = internal/memory
 interval = 2
 label = "RAM %gb_used%/%gb_free%"
-;format-prefix = " "
-;format-prefix-foreground = ${colors.foreground-alt}
-;format-underline = ${xrdb:color6}
-;label = %percentage_used%%
 
 [module/wlan]
 type = internal/network
 interface = wlp3s0
 interval = 3.0
 
-;format-connected = <ramp-signal> <label-connected>
 format-connected = <label-connected>
 format-connected-underline = ${xrdb:color5}
-;format-connected-underline = #9f78e1
 label-connected = %essid%
 
-;format-disconnected =
 format-disconnected = <label-disconnected>
-format-disconnected-underline = ${self.format-connected-underline}
-;label-disconnected = %ifname% disconnected
 label-disconnected = no wifi
-label-disconnected-foreground = ${colors.foreground-alt}
-
-;ramp-signal-0 = 
-;ramp-signal-1 = 
-;ramp-signal-2 = 
-;ramp-signal-3 = 
-;ramp-signal-4 = 
-ramp-signal-foreground = ${colors.foreground-alt}
 
 [module/eth]
 type = internal/network
@@ -176,15 +136,10 @@ interface = ens9
 interval = 3.0
 
 format-connected-underline = ${xrdb:color2}
-format-connected-prefix = " "
-format-connected-prefix-foreground = ${colors.foreground-alt}
 label-connected = %local_ip%
 
 format-disconnected = <label-disconnected>
-format-disconnected-underline = ${self.format-connected-underline}
-;label-disconnected = %ifname% disconnected
 label-disconnected = no eth
-label-disconnected-foreground = ${colors.foreground-alt}
 
 [module/date]
 type = internal/date
@@ -193,10 +148,8 @@ interval = 1
 date = "%a, %b, %Y-%m-%d"
 time = "%H:%M:%S"
 
-;format-prefix = 
 format-prefix-foreground = ${colors.foreground-alt}
 format-underline = ${xrdb:color12}
-;format-underline = #0a6cf5
 
 label = %date% %time%
 
@@ -207,7 +160,6 @@ format-volume = <label-volume> <bar-volume>
 label-volume = VOL
 label-volume-foreground = ${root.foreground}
 
-;format-muted-prefix = " "
 format-muted-foreground = ${colors.foreground-alt}
 label-muted = sound muted
 
@@ -235,25 +187,14 @@ adapter = ADP1
 full-at = 97
 
 format-charging = CHG: <label-charging>
-;format-charging = <animation-charging> <label-charging>
 format-charging-underline = ${xrdb:color3}
 
 format-discharging = DIS: <label-discharging>
-;format-discharging = <ramp-capacity> <label-discharging>
 format-discharging-underline = ${self.format-charging-underline}
 
-;format-full-prefix = " "
 format-full-prefix-foreground = ${colors.foreground-alt}
 format-full-underline = ${self.format-charging-underline}
 
-;ramp-capacity-0 = 
-;ramp-capacity-1 = 
-;ramp-capacity-2 = 
-ramp-capacity-foreground = ${colors.foreground-alt}
-
-;animation-charging-0 = 
-;animation-charging-1 = 
-;animation-charging-2 = 
 animation-charging-foreground = ${colors.foreground-alt}
 animation-charging-framerate = 750
 
@@ -270,11 +211,6 @@ format-warn-underline = ${self.format-underline}
 label = %temperature%
 label-warn = %temperature%
 label-warn-foreground = ${colors.secondary}
-
-;ramp-0 = 
-;ramp-1 = 
-;ramp-2 = 
-ramp-foreground = ${colors.foreground-alt}
 
 [settings]
 screenchange-reload = true
