@@ -44,6 +44,7 @@ jq
 jupyter
 keybase
 maim
+marked
 massren
 meld
 memtest86-efi
@@ -59,6 +60,9 @@ netdata
 net-tools
 nmap
 nodejs
+noto-fonts
+noto-fonts-emoji
+noto-fonts-extra
 npm
 openssh
 parted
@@ -77,6 +81,7 @@ rofi
 rofi-greenclip
 rsync
 ruby-install
+ruby-irb
 ruby-rubocop
 screenkey
 smartgit
@@ -90,6 +95,7 @@ thunar-volman
 tor-browser
 ttf-impallari-raleway-family
 ttf-symbola
+tumbler
 unipicker
 unzip
 vim-plug
@@ -97,10 +103,12 @@ vlc
 wget
 whois
 wireless_tools
+wkhtmltopdf
 wpa_supplicant
 xorg-server
 xorg-xbacklight
 xorg-xinit
 xorg-xinput
+xorg-xkill
 xorg-xrandr
 youtube-dl
