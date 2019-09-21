@@ -125,7 +125,7 @@ interval = 3.0
 
 format-connected = <label-connected>
 format-connected-underline = ${xrdb:color5}
-label-connected = %essid%
+label-connected = %essid% ↑%upspeed% ↓%downspeed%
 
 format-disconnected = <label-disconnected>
 label-disconnected = no wifi
@@ -136,7 +136,7 @@ interface = ens9
 interval = 3.0
 
 format-connected-underline = ${xrdb:color2}
-label-connected = %local_ip%
+label-connected = %local_ip% ↑%upspeed% ↓%downspeed%
 
 format-disconnected = <label-disconnected>
 label-disconnected = no eth
