@@ -51,7 +51,7 @@ mount-0 = /data
 mount-1 = /
 
 label-mounted = %{F#0a81f5}%mountpoint%%{F-}: %percentage_used%%
-label-unmounted = %mountpoint% not mounted
+label-unmounted =
 label-unmounted-foreground = ${colors.foreground-alt}
 
 [module/i3]
