@@ -133,7 +133,7 @@ label-disconnected = no wifi
 
 [module/eth]
 type = internal/network
-interface = ens9
+interface = ${env:ETHERNET_INTERFACE:}
 interval = 3.0
 
 format-connected-underline = ${xrdb:color2}
