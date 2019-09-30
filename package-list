@@ -20,6 +20,8 @@ docker
 dosfstools
 dunst
 duperemove
+elixir
+erlang
 exa
 fava
 fd
@@ -35,6 +37,7 @@ go-ipfs
 gotop
 gparted
 heroku-cli
+hunspell
 hunspell-en_US
 i3-gaps
 ifplugd
@@ -73,6 +76,7 @@ polybar
 powerline
 powerline-fonts
 pulseaudio
+pulseaudio-alsa
 python
 ranger
 redshift
