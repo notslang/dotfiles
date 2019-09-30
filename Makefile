@@ -14,6 +14,7 @@ install: fix-docker
 	stow --target ~ shell
 	rm ~/.config/mimeapps.list
 	stow --target ~/.config alacritty
+	stow --target ~/.config dunst
 	stow --target ~/.config desktop
 	stow --target ~/.config greenclip
 	stow --target ~/.config i3
