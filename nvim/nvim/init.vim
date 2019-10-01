@@ -89,8 +89,8 @@ let g:ale_fixers = {
 \   'cpp': ['clang-format'],
 \   'elixir': ['mix_format'],
 \   'javascript': ['standard'],
-\   'scss': ['stylelint'],
 \   'ruby': ['rubocop'],
+\   'scss': ['stylelint'],
 \}
 let g:ale_elixir_elixir_ls_release = '/data/proj/forks/elixir-ls/rel'
 
