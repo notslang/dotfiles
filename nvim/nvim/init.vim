@@ -13,6 +13,11 @@ set updatetime=100
 
 set hlsearch
 
+" do a case-sensitive search when the search string contains uppercase characters
+" do a case-insensitive search when the search string is entirely lowercase
+:set ignorecase
+:set smartcase
+
 " Protect changes between writes. Default values of
 " updatecount (200 keystrokes) and updatetime
 " (4 seconds) are fine
@@ -45,6 +50,7 @@ call plug#begin('~/.vim/vim-plug')
 Plug 'https://github.com/ActivityWatch/aw-watcher-vim.git'
 Plug 'https://github.com/Yggdroot/indentLine.git'
 Plug 'https://github.com/airblade/vim-gitgutter.git'
+Plug 'https://github.com/brooth/far.vim.git'
 Plug 'https://github.com/editorconfig/editorconfig-vim.git'
 Plug 'https://github.com/janko/vim-test.git'
 Plug 'https://github.com/junegunn/fzf.git'
@@ -115,7 +121,6 @@ noremap! <C-h> <C-w>
 set clipboard=unnamedplus
 
 " use fzf for spelling suggestions
-
 function! FzfSpellSink(word)
   exe 'normal! "_ciw'.a:word
 endfunction
