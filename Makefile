@@ -7,6 +7,7 @@ install: fix-docker
 	ln -sf /data/{book,irclogs,resources} -t ~
 	ln -sf /data/{document,download,junk,movie,music,picture,video,proj} -t ~
 	mkdir -p /data/.ssh
+	stow --target ~/.ssh ssh
 	mkdir -p ~/.config/systemd/user
 	stow --target ~ git
 	stow --target ~ wm
@@ -26,7 +27,6 @@ install: fix-docker
 	stow --target ~/.config fontconfig
 	stow --target ~/.config/systemd/user/ units
 	#stow --target ~/.lein lein
-	stow --target ~/.ssh ssh
 	stow --target ~/.config nvim
 	mkdir -p ~/bin
 	stow --target ~/bin script
