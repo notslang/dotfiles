@@ -12,7 +12,7 @@ install: fix-docker
 	stow --target ~ wm
 	stow --target ~ irc
 	stow --target ~ shell
-	rm ~/.config/mimeapps.list
+	rm -f ~/.config/mimeapps.list
 	stow --target ~/.config alacritty
 	stow --target ~/.config dunst
 	stow --target ~/.config desktop
