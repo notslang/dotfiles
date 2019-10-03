@@ -54,6 +54,7 @@ memtest86-efi
 mlocate
 moreutils
 mpd
+mupdf
 mycli
 mysql-workbench
 ncdu
@@ -68,6 +69,7 @@ noto-fonts-emoji
 noto-fonts-extra
 npm
 openssh
+pandoc
 parted
 pass
 pavucontrol
@@ -92,6 +94,7 @@ smartgit
 source-highlight
 sshfs
 sudo
+sxiv
 thunar
 thunar-archive-plugin
 thunar-media-tags-plugin
@@ -108,6 +111,7 @@ wget
 whois
 wireless_tools
 wkhtmltopdf
+wktmltopdf
 wpa_supplicant
 xorg-server
 xorg-xbacklight
@@ -116,3 +120,5 @@ xorg-xinput
 xorg-xkill
 xorg-xrandr
 youtube-dl
+zathura
+zathura-pdf-mupdf
