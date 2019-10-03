@@ -1,0 +1,2 @@
+#!/bin/sh
+sort -u $1 | sponge $1

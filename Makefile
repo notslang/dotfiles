@@ -28,3 +28,5 @@ install: fix-docker
 	#stow --target ~/.lein lein
 	stow --target ~/.ssh ssh
 	stow --target ~/.config nvim
+	mkdir -p ~/bin
+	stow --target ~/bin script
