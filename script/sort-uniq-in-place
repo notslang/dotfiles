@@ -1,2 +1,5 @@
 #!/bin/sh
-sort -u $1 | sponge $1
+for file in "$@"
+do
+    sort -u $file | sponge $file
+done
