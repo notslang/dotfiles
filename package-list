@@ -6,6 +6,7 @@ alsa-utils
 arandr
 arp-scan
 bash-completion
+bdf-unifont
 betterlockscreen
 chromium
 chruby
@@ -100,6 +101,11 @@ thunar-archive-plugin
 thunar-media-tags-plugin
 thunar-volman
 tor-browser
+ttf-bitstream-vera
+ttf-caladea
+ttf-carlito
+ttf-croscore
+ttf-dejavu
 ttf-impallari-raleway-family
 ttf-symbola
 tumbler
