@@ -33,7 +33,7 @@ floating_modifier $mod
 workspace_auto_back_and_forth yes
 
 # start a terminal
-bindsym $mod+Return exec i3-sensible-terminal
+bindsym $mod+Return exec cd "$(xcwd)" && i3-sensible-terminal
 
 # kill focused window
 bindsym $mod+Shift+q kill
