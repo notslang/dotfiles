@@ -120,6 +120,7 @@ wireless_tools
 wkhtmltopdf
 wktmltopdf
 wpa_supplicant
+xcwd-git
 xorg-server
 xorg-xbacklight
 xorg-xinit
