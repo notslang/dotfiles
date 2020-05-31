@@ -67,7 +67,7 @@ Plug 'https://github.com/tpope/vim-sensible.git'
 Plug 'https://github.com/tpope/vim-sleuth.git'
 Plug 'https://github.com/tpope/vim-surround.git'
 Plug 'https://github.com/vim-airline/vim-airline.git'
-Plug 'https://github.com/w0rp/ale.git'
+Plug 'https://github.com/dense-analysis/ale.git'
 call plug#end()
 
 let g:gruvbox_contrast_dark = 'hard'
