@@ -14,6 +14,9 @@ alias la='exa -lah --git'
 alias mv='mv -i' # avoid overwriting files
 alias diff='diff --color=auto'
 
+# fix unknown terminal type issues on remote machines
+alias ssh='TERM=xterm-256color ssh'
+
 # enable line numbers and syntax highlighting in less
 alias less='less -N'
 export LESSOPEN='| /usr/bin/source-highlight-esc.sh %s'
