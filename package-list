@@ -44,6 +44,7 @@ hunspell-en_US
 i3-gaps
 ifplugd
 irssi
+isync
 iw
 jq
 jupyter
@@ -61,6 +62,7 @@ mycli
 mysql-workbench
 ncdu
 ncmpcpp
+neomutt
 nerd-fonts-complete
 netdata
 net-tools
