@@ -1,0 +1,9 @@
+set realname = "Sean Lang"
+set mbox_type = Maildir
+set folder = "/data/email"
+set spoolfile = "+Inbox"
+set postponed = "+Drafts"
+set record = "+Sent"
+set trash = "+Trash"
+
+set reverse_alias
