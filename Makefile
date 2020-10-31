@@ -10,6 +10,7 @@ install: fix-docker
 	stow --target ~/.ssh ssh
 	mkdir -p ~/.config/systemd/user
 	stow --target ~ git
+	stow --target ~ mbsync
 	stow --target ~ wm
 	stow --target ~ irc
 	stow --target ~ shell
@@ -20,6 +21,7 @@ install: fix-docker
 	stow --target ~/.config greenclip
 	stow --target ~/.config i3
 	stow --target ~/.config mpd
+	stow --target ~/.config neomutt
 	stow --target ~/.config polybar
 	stow --target ~/.config powerline
 	stow --target ~/.config ranger

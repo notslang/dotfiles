@@ -1,0 +1,20 @@
+IMAPStore fastmail-remote
+Host imap.fastmail.com
+Port 993
+User slang@fastmail.com
+PassCmd "pass fastmail/slang-mbsync-app-password"
+SSLType IMAPS
+CertificateFile /etc/ssl/certs/ca-certificates.crt
+
+MaildirStore fastmail-local
+Path /data/email/
+Inbox /data/email/Inbox
+Subfolders Verbatim
+
+Channel fastmail
+Master :fastmail-remote:
+Slave :fastmail-local:
+Create Both
+Expunge Both
+Patterns *
+SyncState *
