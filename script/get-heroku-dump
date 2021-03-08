@@ -1,5 +1,4 @@
 #!/bin/sh
-mkdir -p /data/collection/heroku-db-backup/
 
 # backup the database for each supplied arg
 for application in "$@"
