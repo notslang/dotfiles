@@ -32,3 +32,4 @@ install: fix-docker
 	stow --target ~/.config nvim
 	mkdir -p ~/bin
 	stow --target ~/bin script
+	stow --target ~/.config/pgcli pgcli
