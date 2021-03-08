@@ -1,0 +1,14 @@
+#!/bin/sh
+mkdir -p /data/collection/heroku-db-backup/
+
+# backup the database for each supplied arg
+for application in "$@"
+do
+    mkdir -p /data/collection/heroku-db-backup/$application
+
+    # the last part of this output file name must be sortable for
+    # sync-heroku-db to find the latest backup
+    output="/data/collection/heroku-db-backup/$application/$(date +%s).dump";
+    heroku pg:backups:capture --app $application || exit 1
+    heroku pg:backups:download --app $application --output $output || exit 1
+done
