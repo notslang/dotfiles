@@ -1,0 +1,7 @@
+#!/bin/sh
+# savelog -n -c 400 ~/log/git-fetch.log
+# set PATH explicitly so find doesn't complain about ~/bin being in path.
+PATH="/usr/bin/" find /data/proj -type d -execdir [ -d '{}/.git' ]  \; -print -prune |
+    parallel --gnu --keep-order \
+    "date; echo {}; cd {}; git fetch --all --verbose" \
+    >> ./git-fetch.log 2>&1
