@@ -37,7 +37,7 @@ PROMPT_COMMAND+='if [[ $PARSED_COMMAND != "\"\"" ]]; then '
 PROMPT_COMMAND+='COMMAND_NUMBER=$(echo $HISTORY_COMMAND | cut -d " " -f 1);'
 PROMPT_COMMAND+='COMMAND_TIME=$(echo $HISTORY_COMMAND | cut -d " " -f 2);'
 PROMPT_COMMAND+='WORKING_DIR=$(pwd | jq -M -R ".");'
-PROMPT_COMMAND+='echo "{\"time\":$COMMAND_TIME,\"pwd\":$WORKING_DIR,\"command\":$PARSED_COMMAND,\"exit_code\":$EXIT_CODE,\"command_number\":$COMMAND_NUMBER}" >> /data/$(hostname)-bash-history.json;'
+PROMPT_COMMAND+='echo "{\"time\":$COMMAND_TIME,\"pwd\":$WORKING_DIR,\"command\":$PARSED_COMMAND,\"exit_code\":$EXIT_CODE,\"command_number\":$COMMAND_NUMBER}" >> /data/$HOSTNAME-bash-history.json;'
 PROMPT_COMMAND+='fi '
 PROMPT_COMMAND+='fi);'
 
