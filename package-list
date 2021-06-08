@@ -5,11 +5,11 @@ alsa-firmware
 alsa-utils
 arandr
 arp-scan
+asdf-vm
 bash-completion
 bdf-unifont
 betterlockscreen
 chromium
-chruby
 clang
 csvkit
 ctags
@@ -92,7 +92,6 @@ ripgrep
 rofi
 rofi-greenclip
 rsync
-ruby-install
 ruby-irb
 ruby-rubocop
 screenkey

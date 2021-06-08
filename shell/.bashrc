@@ -1,7 +1,8 @@
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
-[[ -f /usr/share/chruby/chruby.sh ]] && source /usr/share/chruby/chruby.sh
+[[ -f /opt/asdf-vm/asdf.sh ]] && source /opt/asdf-vm/asdf.sh
+[[ -f /opt/asdf-vm/completions/asdf.bash ]] && source /opt/asdf-vm/completions/asdf.bash
 
 set -o noclobber
 shopt -s globstar
