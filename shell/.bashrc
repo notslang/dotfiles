@@ -62,7 +62,7 @@ export ANDROID_HOME='/opt/android-sdk'
 export PATH=$ANDROID_HOME/platform-tools:$PATH
 
 # Allow running scripts from ~/bin
-export PATH="$PATH:~/bin"
+export PATH="$PATH:$HOME/bin"
 
 # Allow running locally installed node modules
 export PATH="$PATH:./node_modules/.bin"
