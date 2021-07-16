@@ -1,0 +1,35 @@
+#!/bin/sh
+
+# make a favicon from an svg
+
+echo $1
+
+if [ ! $1 ]; then
+    echo 'source svg path not given'
+    exit
+fi
+
+if [ -n "$2" ]; then
+    echo 'too many paths given'
+    exit
+fi
+
+set -o errexit
+
+temp_dir=$(mktemp -d)
+
+svgexport "$1" "$temp_dir/favicon-16.png" 16:16 pad
+svgexport "$1" "$temp_dir/favicon-32.png" 32:32 pad
+svgexport "$1" "$temp_dir/favicon-48.png" 48:48 pad
+
+optipng "$temp_dir/favicon-16.png"
+optipng "$temp_dir/favicon-32.png"
+optipng "$temp_dir/favicon-48.png"
+
+convert "$temp_dir/favicon-16.png" "$temp_dir/favicon-32.png" "$temp_dir/favicon-48.png" "favicon.ico"
+
+# cleanup
+rm "$temp_dir/favicon-16.png"
+rm "$temp_dir/favicon-32.png"
+rm "$temp_dir/favicon-48.png"
+rmdir "$temp_dir"
