@@ -11,7 +11,7 @@ smart_borders on
 smart_gaps on
 
 # setup background image
-set $BACKGROUND /data/picture/background/synthwave-80s-neon.jpg
+set $BACKGROUND /data/picture/background/moebius-2.png
 exec_always --no-startup-id feh --bg-fill "$BACKGROUND"
 
 # polybar
