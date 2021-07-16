@@ -3,6 +3,7 @@
 
 [[ -f /opt/asdf-vm/asdf.sh ]] && source /opt/asdf-vm/asdf.sh
 [[ -f /opt/asdf-vm/completions/asdf.bash ]] && source /opt/asdf-vm/completions/asdf.bash
+[[ -f /usr/share/fzf/key-bindings.bash ]] && source /usr/share/fzf/key-bindings.bash
 
 set -o noclobber
 shopt -s globstar
