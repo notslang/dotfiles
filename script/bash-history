@@ -1,2 +1,2 @@
 #!/bin/sh
-cat /data/$(hostname)-bash-history.json | jq -r .command
+cat /data/$HOSTNAME-bash-history.json | jq -r .command
