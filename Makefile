@@ -2,34 +2,50 @@ fix-docker:
 	sudo gpasswd -a $$USER docker
 
 install: fix-docker
-	mkdir -p ~/.vim/{swap,undodir,backup,vim-plug}
-	ln -sf /data/.{armory,bitcoin,gnupg,password-store,ssh} -t ~
-	ln -sf /data/{book,irclogs,resources} -t ~
-	ln -sf /data/{document,download,junk,movie,music,picture,video,proj} -t ~
-	mkdir -p /data/.ssh
-	stow --target ~/.ssh ssh
-	mkdir -p ~/.config/systemd/user
-	stow --target ~ git
-	stow --target ~ mbsync
-	stow --target ~ wm
-	stow --target ~ irc
-	stow --target ~ shell
 	rm -f ~/.config/mimeapps.list
+	mkdir -p /data/.ssh
+	mkdir -p ~/.config/pgcli
+	mkdir -p ~/.config/systemd/user
+	mkdir -p ~/.vim/backup
+	mkdir -p ~/.vim/swap
+	mkdir -p ~/.vim/undodir
+	mkdir -p ~/.vim/vim-plug
+	mkdir -p ~/bin
+	ln -sf /data/.armory -t ~
+	ln -sf /data/.bitcoin -t ~
+	ln -sf /data/.gnupg -t ~
+	ln -sf /data/.password-store -t ~
+	ln -sf /data/.ssh -t ~
+	ln -sf /data/book -t ~
+	ln -sf /data/document -t ~
+	ln -sf /data/download -t ~
+	ln -sf /data/irclogs -t ~
+	ln -sf /data/junk -t ~
+	ln -sf /data/movie -t ~
+	ln -sf /data/music -t ~
+	ln -sf /data/picture -t ~
+	ln -sf /data/proj -t ~
+	ln -sf /data/resources -t ~
+	ln -sf /data/video -t ~
+	stow --target ~ git
+	stow --target ~ irc
+	stow --target ~ mbsync
+	stow --target ~ shell
+	stow --target ~ wm
 	stow --target ~/.config alacritty
-	stow --target ~/.config dunst
 	stow --target ~/.config desktop
+	stow --target ~/.config dunst
+	stow --target ~/.config fontconfig
 	stow --target ~/.config greenclip
 	stow --target ~/.config i3
 	stow --target ~/.config mpd
 	stow --target ~/.config neomutt
+	stow --target ~/.config nvim
 	stow --target ~/.config polybar
 	stow --target ~/.config powerline
 	stow --target ~/.config ranger
 	stow --target ~/.config rofi
-	stow --target ~/.config fontconfig
-	stow --target ~/.config/systemd/user/ units
-	#stow --target ~/.lein lein
-	stow --target ~/.config nvim
-	mkdir -p ~/bin
-	stow --target ~/bin script
 	stow --target ~/.config/pgcli pgcli
+	stow --target ~/.config/systemd/user/ units
+	stow --target ~/.ssh ssh
+	stow --target ~/bin script
