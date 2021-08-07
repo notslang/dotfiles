@@ -1,4 +1,3 @@
-dash
 activitywatch-bin
 alacritty
 alsa
@@ -15,6 +14,7 @@ clang
 csvkit
 ctags
 curl
+dash
 dhcpcd
 dialog
 dnsutils
