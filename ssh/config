@@ -1,8 +1,16 @@
 Host alarmpi
     User root
 
+Host dev.wmse.org
+    HostName 161.35.133.197
+    User tractionfactory
 
+Host wmse.org
+    HostName 20.41.144.29
+    User tractionfactory
 
+Host slang.cx
+    HostName 144.76.109.157
 
 Host *
     AddKeysToAgent yes
