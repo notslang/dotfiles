@@ -1,0 +1,18 @@
+#!/bin/sh
+# visualize the schema of whatever db is currently running using schemaspy
+# this requires that schemaspy and postgresql-jdbc are installed
+
+# find the first database ending in "_dev" or "_development". also trim whitespace with xargs
+db_name=$(psql -U postgres -h 0.0.0.0 -c "SELECT datname FROM pg_database" | grep -m 1 -E "(_dev|_development)$" | xargs)
+
+output_dir=$(mktemp -d)
+
+schemaspy -dp /usr/share/java/postgresql-jdbc \
+          -t pgsql \
+          -host localhost \
+          -port 5432 \
+          -db $db_name \
+          -s public \
+          -u postgres \
+          -p postgres \
+          -o $output_dir
