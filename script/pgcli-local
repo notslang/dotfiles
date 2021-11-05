@@ -1,1 +1,2 @@
+#!/bin/sh
 pgcli postgres://postgres:postgres@localhost:5432
