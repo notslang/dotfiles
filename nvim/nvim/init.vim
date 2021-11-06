@@ -57,6 +57,7 @@ Plug 'https://github.com/janko/vim-test.git'
 Plug 'https://github.com/junegunn/fzf.git'
 Plug 'https://github.com/junegunn/fzf.vim.git'
 Plug 'https://github.com/mbbill/undotree.git'
+Plug 'https://github.com/mfussenegger/nvim-dap.git'
 Plug 'https://github.com/morhetz/gruvbox.git'
 Plug 'https://github.com/nathangrigg/vim-beancount.git'
 Plug 'https://github.com/neoclide/coc.nvim.git', {'branch': 'release'}
