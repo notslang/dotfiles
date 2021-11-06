@@ -102,7 +102,7 @@ let g:ale_fixers = {
 \   'ruby': ['rubocop'],
 \   'scss': ['stylelint'],
 \}
-let g:ale_elixir_elixir_ls_release = '/data/proj/forks/elixir-ls/rel'
+let g:ale_elixir_elixir_ls_release = '/data/proj/forks/elixir-ls/release'
 
 set noshowmode " mode is shown by airline
 
