@@ -51,7 +51,6 @@ call plug#begin('~/.vim/vim-plug')
 Plug 'https://github.com/ActivityWatch/aw-watcher-vim.git'
 Plug 'https://github.com/Yggdroot/indentLine.git'
 Plug 'https://github.com/airblade/vim-gitgutter.git'
-Plug 'https://github.com/brooth/far.vim.git'
 Plug 'https://github.com/dense-analysis/ale.git'
 Plug 'https://github.com/editorconfig/editorconfig-vim.git'
 Plug 'https://github.com/janko/vim-test.git'
