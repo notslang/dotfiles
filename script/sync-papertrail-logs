@@ -1,0 +1,23 @@
+#!/bin/sh
+
+# backup the logs for each supplied arg
+for application in "$@"
+do
+  token=$(pass papertrail-api-token/$application)
+  output_dir="/data/collection/papertrail-backup/$application";
+  mkdir -p "$output_dir"
+
+  curl -sH "X-Papertrail-Token: $token" https://papertrailapp.com/api/v1/archives.json | \
+  jq -r '.[].filename' | \
+  while read filename; do
+    output="$output_dir/$filename"
+    date=$(echo "$filename" | egrep -o '[0-9-]+')
+
+    # do not download logs that we already fetched
+    if [ ! -f $output ]
+    then
+      echo "output $output\nurl https://papertrailapp.com/api/v1/archives/$date/download"
+    fi
+  done | \
+  curl --progress-bar -fL --header "X-Papertrail-Token: $token" -K-
+done
