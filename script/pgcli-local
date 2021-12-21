@@ -1,2 +1,3 @@
 #!/bin/sh
-pgcli postgres://postgres:postgres@localhost:5432
+db_name=$(get-active-postgres-dev-database)
+pgcli postgres://postgres:postgres@localhost:5432/$db_name
