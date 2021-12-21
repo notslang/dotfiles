@@ -1,0 +1,5 @@
+#!/bin/sh
+# open pgcli up using the DATABASE_URL of a given heroku project
+application=$1
+db_url=$(heroku config:get DATABASE_URL -a $application)
+pgcli $db_url
