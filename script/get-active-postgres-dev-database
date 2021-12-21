@@ -1,0 +1,3 @@
+#!/bin/sh
+# find the first database ending in "_dev" or "_development". also trim whitespace with xargs
+psql postgres://postgres:postgres@localhost:5432 -c "SELECT datname FROM pg_database" | grep -m 1 -E "(_dev|_development)$" | xargs

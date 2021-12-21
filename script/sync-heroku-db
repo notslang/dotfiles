@@ -16,8 +16,7 @@ latest_backup=$(find "$backup_dir" -name "*.dump" -printf "%f\n" | sort -n --fie
 # only have one database ending in "_dev" or "_development". this works well if you're running
 # one postgres instance at a time with docker containers
 
-# find the first database ending in "_dev" or "_development". also trim whitespace with xargs
-db_name=$(psql -U postgres -h 0.0.0.0 -c "SELECT datname FROM pg_database" | grep -m 1 -E "(_dev|_development)$" | xargs)
+db_name=$(get-active-postgres-dev-database)
 
 pg_restore --verbose --clean --no-acl --no-owner -h 0.0.0.0 -U postgres -d $db_name "$backup_dir/$latest_backup"
 

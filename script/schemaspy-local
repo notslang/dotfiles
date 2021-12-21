@@ -2,8 +2,7 @@
 # visualize the schema of whatever db is currently running using schemaspy
 # this requires that schemaspy and postgresql-jdbc are installed
 
-# find the first database ending in "_dev" or "_development". also trim whitespace with xargs
-db_name=$(psql -U postgres -h 0.0.0.0 -c "SELECT datname FROM pg_database" | grep -m 1 -E "(_dev|_development)$" | xargs)
+db_name=$(get-active-postgres-dev-database)
 
 output_dir=$(mktemp -d)
 
