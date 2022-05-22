@@ -1,0 +1,13 @@
+#!/bin/sh
+
+# Parse logs that have been downloaded by the sync-papertrail-logs command and
+# print them to STDOUT as JSON. Only well-formed Heroku router logs will be
+# printed. This means that requests that fail with a Heroku-level error code
+# like H10 are excluded. Postgres related logs are excluded. Router logs with
+# a negative "service" time are excluded. Etc.
+
+application=$1
+log_dir="/data/collection/papertrail-backup/$application"
+
+rg --no-ignore --search-zip --no-line-number --no-filename "heroku/router\tat=info method=" $log_dir  \
+| parse-heroku-papertrail-log
