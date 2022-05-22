@@ -1,10 +1,13 @@
 #!/bin/sh
 
-# backup the logs for each supplied arg
+# Backup papertrail logs for each supplied arg. Args are expected to be Heroku
+# application names, and each application should have a Papertrail API token
+# stored in `pass` under the papertrail-api-token directory. Logs will be
+# stored as *.tsv.gz files in the /data/collection/papertrail-backup directory.
 for application in "$@"
 do
   token=$(pass papertrail-api-token/$application)
-  output_dir="/data/collection/papertrail-backup/$application";
+  output_dir="/data/collection/papertrail-backup/$application"
   mkdir -p "$output_dir"
 
   curl -sH "X-Papertrail-Token: $token" https://papertrailapp.com/api/v1/archives.json | \
