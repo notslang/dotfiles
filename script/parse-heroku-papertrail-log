@@ -33,6 +33,8 @@ def parse_line(line):
 
     parsed_path = urlparse(match.group('path'))
 
+    # NOTE: sometimes the log message ends with a literal "\n". This ends up in
+    # the protocol group, so we strip it out
     return {
         'date_time': match.group('date') + 'T' + match.group('time'),
         'app_name': match.group('app_name'),
@@ -42,7 +44,7 @@ def parse_line(line):
         'method': match.group('method'),
         'path': parsed_path.path,
         'query': parsed_path.query,
-        'protocol': match.group('protocol'),
+        'protocol': match.group('protocol').replace('\\n', ''),
         'request_id': match.group('request_id'),
         'response_size_bytes': int(match.group('response_size_bytes')),
         'server': match.group('server'),
