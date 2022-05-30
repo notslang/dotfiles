@@ -1,0 +1,106 @@
+#!/bin/python3
+import fileinput
+from json import loads, dumps
+import re
+import sys
+from urllib.parse import urlparse
+
+
+phoenix_log_format = re.compile(
+    r'[0-9]+:[0-9]+:[0-9]+\.[0-9]+ request_id=(?P<request_id>[^\s]+) \[info\] (?P<message>.*)')
+
+
+def parse_fly_log_line(line):
+    log = loads(line)
+
+    match = re.fullmatch(phoenix_log_format, log['message'])
+
+    if match is None:
+        return None
+
+    # date_time is when the log was recieved by fly, not exactly when the request was handled
+    return {
+        'app_name': log['fly']['app']['name'],
+        'date_time': log['timestamp'],
+        'server': log['fly']['app']['instance'],
+        'region': log['fly']['region'],
+        'request_id': match.group('request_id'),
+        'message': match.group('message'),
+    }
+
+
+request_message_format = re.compile(
+    r'(?P<method>GET|OPTIONS|POST|PUT|DELETE|PATCH|HEAD) (?P<path>.+)')
+
+
+def parse_request_message(message):
+    match = re.fullmatch(request_message_format, message)
+
+    if match is None:
+        return None
+
+    return {
+        'method': match.group('method'),
+        'path': match.group('path'),
+    }
+
+
+response_message_format = re.compile(
+    r'(?P<action>Sent|Chunked) (?P<http_status>[0-9]+) in (?P<duration>[0-9]+)(?P<duration_unit>µs|ms)')
+
+
+def parse_response_message(message):
+    match = re.fullmatch(response_message_format, message)
+
+    if match is None:
+        return None
+
+    duration = int(match.group('duration'))
+
+    if match.group('duration_unit') == 'µs':
+        duration = duration / 1000
+
+    return {
+        'is_chunked': match.group('action') == 'Chunked',
+        'http_status': int(match.group('http_status')),
+        'time_service_ms': duration,
+    }
+
+
+def group_parsed_log(parsed_logs, parsed_log):
+    request_id = parsed_log['request_id']
+    parsed_logs[request_id] = parsed_log | parsed_logs.get(request_id, {})
+
+
+def print_parsed_logs(parsed_logs):
+    for parsed_log in parsed_logs.values():
+        print(dumps(parsed_log, separators=(',', ':')))
+
+
+if __name__ == '__main__':
+    parsed_logs = {}
+
+    for line in fileinput.input():
+        parsed_line = parse_fly_log_line(line.strip())
+
+        if parsed_line is None:
+            # output lines that fail to parse to stderr
+            print(line, file=sys.stderr)
+            continue
+
+        message = parsed_line.pop('message', None)
+        parsed_message = parse_request_message(message)
+
+        if parsed_message is None:
+            parsed_message = parse_response_message(message)
+
+        if parsed_message is None:
+            # output lines that fail to parse to stderr
+            print(line, file=sys.stderr)
+            continue
+
+        group_parsed_log(parsed_logs, parsed_line | parsed_message)
+
+    # TODO: print logs in batches as we go, but leave the last thousand logs or
+    # so to give them time to get matched
+    print_parsed_logs(parsed_logs)
