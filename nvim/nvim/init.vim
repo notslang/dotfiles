@@ -56,6 +56,7 @@ Plug 'https://github.com/editorconfig/editorconfig-vim.git'
 Plug 'https://github.com/janko/vim-test.git'
 Plug 'https://github.com/junegunn/fzf.git'
 Plug 'https://github.com/junegunn/fzf.vim.git'
+Plug 'https://github.com/luizribeiro/vim-cooklang.git', { 'for': 'cook' }
 Plug 'https://github.com/mbbill/undotree.git'
 Plug 'https://github.com/mfussenegger/nvim-dap.git'
 Plug 'https://github.com/morhetz/gruvbox.git'
