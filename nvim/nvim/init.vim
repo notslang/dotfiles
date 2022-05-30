@@ -91,7 +91,7 @@ nmap <silent> <C-p> :Files<CR>
 let g:ale_sign_error = '✘'
 let g:ale_sign_warning = '⚠'
 let g:ale_linters = {}
-let g:ale_linters.elixir = ['elixir-ls']
+let g:ale_linters.elixir = ['elixir-ls', 'credo']
 let g:ale_fix_on_save = 1
 let g:ale_lint_on_enter = 1
 let g:ale_fixers = {
@@ -99,6 +99,7 @@ let g:ale_fixers = {
 \   'cpp': ['clang-format'],
 \   'elixir': ['mix_format'],
 \   'javascript': ['standard'],
+\   'python': ['autopep8'],
 \   'ruby': ['rubocop'],
 \   'scss': ['stylelint'],
 \}
