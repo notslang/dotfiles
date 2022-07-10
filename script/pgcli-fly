@@ -1,0 +1,10 @@
+#!/bin/sh
+# open pgcli up and connect to the database of a given fly.io project
+# this script assumes that wireguard is already running and we're able to
+# connect to the instance using its .internal address.
+application=$1
+
+# the password is not avaliable through the fly cli, so we store it in pass
+db_password=$(pass fly-postgres-password/$application)
+
+pgcli postgres://postgres:$db_password@$application.internal/postgres
