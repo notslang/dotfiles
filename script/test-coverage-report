@@ -1,0 +1,4 @@
+#!/bin/sh
+set -o errexit
+mix coveralls.html
+$BROWSER --new-tab "file://$(pwd)/cover/excoveralls.html"
