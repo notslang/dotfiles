@@ -20,15 +20,13 @@ Papertrail Format is:
 - message (the rest of this is the message from the Heroku Router with self-explanatory fields)
 """
 
-log_format = re.compile(r'[0-9]+\t[^\t]+\t(?P<date>[0-9-]+) (?P<time>[0-9:]+)\t[0-9]+\t(?P<app_name>[^\t]+)\t[^\t]+\t[^\t]+\tInfo\theroku\/router\tat=info method=(?P<method>(GET|OPTIONS|POST|PUT|DELETE|PATCH|HEAD)) path="(?P<path>[^"]+)" host=(?P<host>[^\s]+) request_id=(?P<request_id>[0-9a-z-]+) fwd="(?P<client_ip>[^"]+)" dyno=(?P<server>[^\s]+) connect=(?P<connect_time>[0-9]+)ms service=(?P<service_time>[0-9]+)ms status=(?P<http_status>[0-9]+) bytes=(?P<response_size_bytes>[0-9]+) protocol=(?P<protocol>[^\s]+)')
+log_format = re.compile(r'[0-9]+\t[^\t]+\t(?P<date>[0-9-]+) (?P<time>[0-9:]+)\t[0-9]+\t(?P<app_name>[^\t]+)\t[^\t]+\t[^\t]+\tInfo\theroku\/router\tat=info method=(?P<method>GET|OPTIONS|POST|PUT|DELETE|PATCH|HEAD) path="(?P<path>[^"]+)" host=(?P<host>[^\s]+) request_id=(?P<request_id>[0-9a-z-]+) fwd="(?P<client_ip>[^"]+)" dyno=(?P<server>[^\s]+) connect=(?P<connect_time>[0-9]+)ms service=(?P<service_time>[0-9]+)ms status=(?P<http_status>[0-9]+) bytes=(?P<response_size_bytes>[0-9]+) protocol=(?P<protocol>[^\s]+)')
 
 
 def parse_line(line):
     match = re.fullmatch(log_format, line)
 
     if match is None:
-        # output lines that fail to parse to stderr
-        print(line, file=sys.stderr)
         return None
 
     parsed_path = urlparse(match.group('path'))
@@ -56,5 +54,8 @@ def parse_line(line):
 if __name__ == '__main__':
     for line in fileinput.input():
         parsed_line = parse_line(line.strip())
-        if parse_line is not None:
+        if parsed_line is not None:
             print(dumps(parsed_line, separators=(',', ':')))
+        else:
+            # output lines that fail to parse to stderr
+            print(line, file=sys.stderr)
