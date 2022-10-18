@@ -1,0 +1,68 @@
+#!/bin/python3
+import fileinput
+from json import dumps
+import re
+import sys
+
+"""
+Papertrail Format is:
+
+- papertrail log id (ignored)
+- received at (ignored)
+- generated at
+- source id (ignored)
+- source name, like the name of the heroku app
+- source ip (ignored)
+- facility (ignored)
+- severity (should be Info for postgres stats)
+- program (should be app/postgres)
+- message (the rest of this is the message from the Postgres Addon with self-explanatory fields)
+
+"""
+
+log_format = re.compile(r'[0-9]+\t[^\t]+\t(?P<date>[0-9-]+) (?P<time>[0-9:]+)\t[0-9]+\t(?P<app_name>[^\t]+)\t[^\t]+\t[^\t]+\tInfo\tapp\/heroku-postgres\tsource=(?P<database_env_var>[^\s]+) addon=(?P<database_name>[^\s]+) sample#current_transaction=(?P<current_transaction>[0-9]+) sample#db_size=(?P<db_size_bytes>[0-9]+)bytes sample#tables=(?P<tables>[0-9]+) sample#active-connections=(?P<active_connections>[0-9]+) sample#waiting-connections=(?P<waiting_connections>[0-9]+) sample#index-cache-hit-rate=(?P<index_cache_hit_rate>[0-9\.]+) sample#table-cache-hit-rate=(?P<table_cache_hit_rate>[0-9\.]+) sample#load-avg-1m=(?P<load_avg_1m>[0-9\.]+) sample#load-avg-5m=(?P<load_avg_5m>[0-9\.]+) sample#load-avg-15m=(?P<load_avg_15m>[0-9\.]+) sample#read-iops=(?P<read_iops>[0-9\.]+) sample#write-iops=(?P<write_iops>[0-9\.]+) sample#tmp-disk-used=(?P<tmp_disk_used_bytes>[0-9]+) sample#tmp-disk-available=(?P<tmp_disk_available_bytes>[0-9]+) sample#memory-total=(?P<memory_total_kb>[0-9]+)kB sample#memory-free=(?P<memory_free_kb>[0-9]+)kB sample#memory-cached=(?P<memory_cached_kb>[0-9]+)kB sample#memory-postgres=(?P<memory_postgres_kb>[0-9]+)kB sample#wal-percentage-used=(?P<wal_percentage_used>[0-9\.]+)')
+
+
+def parse_line(line):
+    match = re.fullmatch(log_format, line)
+
+    if match is None:
+        return None
+
+    # NOTE: sometimes the log message ends with a literal "\n". This ends up in
+    # the protocol group, so we strip it out
+    return {
+        'date_time': match.group('date') + 'T' + match.group('time'),
+        'app_name': match.group('app_name'),
+        'active_connections': int(match.group('active_connections')),
+        'current_transaction': int(match.group('current_transaction')),
+        'database_env_var': match.group('database_env_var'),
+        'database_name': match.group('database_name'),
+        'db_size_bytes': int(match.group('db_size_bytes')),
+        'index_cache_hit_rate': float(match.group('index_cache_hit_rate')),
+        'load_avg_15m': float(match.group('load_avg_15m')),
+        'load_avg_1m': float(match.group('load_avg_1m')),
+        'load_avg_5m': float(match.group('load_avg_5m')),
+        'memory_cached_kb': int(match.group('memory_cached_kb')),
+        'memory_free_kb': int(match.group('memory_free_kb')),
+        'memory_postgres_kb': int(match.group('memory_postgres_kb')),
+        'memory_total_kb': int(match.group('memory_total_kb')),
+        'read_iops': float(match.group('read_iops')),
+        'table_cache_hit_rate': float(match.group('table_cache_hit_rate')),
+        'tables': int(match.group('tables')),
+        'tmp_disk_available_bytes': int(match.group('tmp_disk_available_bytes')),
+        'tmp_disk_used_bytes': int(match.group('tmp_disk_used_bytes')),
+        'waiting_connections': int(match.group('waiting_connections')),
+        'wal_percentage_used': float(match.group('wal_percentage_used')),
+        'write_iops': float(match.group('write_iops'))
+    }
+
+
+if __name__ == '__main__':
+    for line in fileinput.input():
+        parsed_line = parse_line(line.strip())
+        if parsed_line is not None:
+            print(dumps(parsed_line, separators=(',', ':')))
+        else:
+            # output lines that fail to parse to stderr
+            print(line, file=sys.stderr)
