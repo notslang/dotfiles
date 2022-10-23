@@ -26,11 +26,11 @@ Or you can clone it [from source](https://savannah.gnu.org/git/?group=stow) and 
 
 # how it works
 
-By default, the stow command will create symlinks for files in the parent directory of where you execute the command. This dotfiles setup makes no assumptions about where the repo is located, and runs all the stow commands with `Makefile`.
+By default, the stow command will create symlinks for files in the parent directory of where you execute the command. This dotfiles setup makes no assumptions about where the repo is located, and runs all the stow commands with `install.sh`.
 
-To install the configs, clone this repo to the location of your choice, `cd` into the repo directory, and run `make install`. This will run a series of stow commands to symlink all the config files in this repo to where they belong in your home directory.
+To install the configs, clone this repo to the location of your choice, `cd` into the repo directory, and run `./install.sh`. This will run a series of stow commands to symlink all the config files in this repo to where they belong in your home directory.
 
-If you don't want to install a particular set of config files, remove the corresponding line in `Makefile` and that directory will be omitted. For example, if you don't use [Neovim](https://neovim.io/) you would remove the line `stow --target ~/.config nvim`.
+If you don't want to install a particular set of config files, remove the corresponding line in `install.sh` and that directory will be omitted. For example, if you don't use [Neovim](https://neovim.io/) you would remove the line `stow --target ~/.config nvim`.
 
 Note: Stow can only create a symlink if a config file does not already exist. If a default file was created upon program installation you must delete it first before you can install a new one with stow. This does not apply to directories, only files.
 
