@@ -29,6 +29,7 @@ ln -sf /data/proj -t ~
 ln -sf /data/resources -t ~
 ln -sf /data/video -t ~
 
+stow --target ~ asdf
 stow --target ~ git
 stow --target ~ irc
 stow --target ~ mbsync
