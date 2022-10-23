@@ -16,6 +16,12 @@ alias la='exa -lah --git'
 alias mv='mv -i' # avoid overwriting files
 alias diff='diff --color=auto'
 
+# enable shell history in iex
+export ERL_AFLAGS="-kernel shell_history enabled"
+
+# open source code for function in editor
+export ELIXIR_EDITOR='$TERM --working-directory $(dirname __FILE__) --command nvim +__LINE__ __FILE__'
+
 # fix unknown terminal type issues on remote machines
 alias ssh='TERM=xterm-256color ssh'
 
