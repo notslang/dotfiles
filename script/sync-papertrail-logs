@@ -14,7 +14,7 @@ do
   jq -r '.[].filename' | \
   while read filename; do
     output="$output_dir/$filename"
-    date=$(echo "$filename" | egrep -o '[0-9-]+')
+    date=$(echo "$filename" | grep -E -o '[0-9-]+')
 
     # do not download logs that we already fetched
     if [ ! -f $output ]
