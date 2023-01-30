@@ -37,6 +37,10 @@ if has("patch-8.1.0251")
   set backupdir^=~/.vim/backup//
 end
 
+" Always show the signcolumn, otherwise it would shift the text each time
+" diagnostics appear/become resolved.
+set signcolumn=yes
+
 " persist the undo tree for each file
 set undofile
 set undodir^=~/.vim/undo//
@@ -49,6 +53,7 @@ set spellfile=$HOME/.vim/spell-en.utf-8.add
 
 call plug#begin('~/.vim/vim-plug')
 Plug 'https://github.com/ActivityWatch/aw-watcher-vim.git'
+Plug 'https://github.com/Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'https://github.com/Yggdroot/indentLine.git'
 Plug 'https://github.com/airblade/vim-gitgutter.git'
 Plug 'https://github.com/dense-analysis/ale.git'
@@ -61,7 +66,6 @@ Plug 'https://github.com/mbbill/undotree.git'
 Plug 'https://github.com/mfussenegger/nvim-dap.git'
 Plug 'https://github.com/morhetz/gruvbox.git'
 Plug 'https://github.com/nathangrigg/vim-beancount.git'
-Plug 'https://github.com/neoclide/coc.nvim.git', {'branch': 'release'}
 Plug 'https://github.com/ryanoasis/vim-devicons.git'
 Plug 'https://github.com/sheerun/vim-polyglot'
 Plug 'https://github.com/stsewd/fzf-checkout.vim.git'
@@ -74,6 +78,8 @@ Plug 'https://github.com/tpope/vim-sleuth.git'
 Plug 'https://github.com/tpope/vim-surround.git'
 Plug 'https://github.com/vim-airline/vim-airline.git'
 call plug#end()
+
+let g:deoplete#enable_at_startup = 1
 
 let g:gruvbox_contrast_dark = 'hard'
 colorscheme gruvbox
@@ -105,6 +111,7 @@ let g:ale_fixers = {
 \   'scss': ['stylelint'],
 \}
 let g:ale_elixir_elixir_ls_release = '/data/proj/forks/elixir-ls/release'
+let g:ale_elixir_credo_strict = 1
 
 set noshowmode " mode is shown by airline
 
