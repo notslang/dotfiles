@@ -1,0 +1,22 @@
+#!/bin/sh
+
+# move a directory with rsync
+
+if [ ! $1 ]; then
+    echo 'source path not given'
+    exit
+fi
+
+if [ ! $2 ]; then
+    echo 'destination path not given'
+    exit
+fi
+
+if [ -n "$3" ]; then
+    echo 'too many paths given'
+    exit
+fi
+
+set -o errexit
+rsync --progress -r --remove-source-files --times --perms $1 $2
+find $1 -empty -type d -delete
