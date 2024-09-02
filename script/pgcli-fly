@@ -5,6 +5,6 @@
 application=$1
 
 # the password is not avaliable through the fly cli, so we store it in pass
-db_password=$(pass fly-postgres-password/$application)
+db_username_password=$(pass fly-postgres-password/$application)
 
-pgcli postgres://postgres:$db_password@$application.internal/postgres
+pgcli postgres://$db_username_password@$application.internal/postgres
