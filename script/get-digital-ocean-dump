@@ -1,0 +1,15 @@
+#!/bin/sh
+
+# backup the database for each supplied arg
+for application in "$@"
+do
+    mkdir -p /data/collection/digital-ocean-db-backup/$application
+
+    # the password is not avaliable through the fly cli, so we store it in pass
+    connection_string=$(pass digital-ocean-postgres-connection/$application)
+
+    # the last part of this output file name must be sortable for
+    # sync-fly-db to find the latest backup
+    output="/data/collection/digital-ocean-db-backup/$application/$(date +%s).dump";
+    pg_dump -Fc --no-acl --no-owner postgresql://$connection_string?sslmode=require > $output
+done

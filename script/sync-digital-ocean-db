@@ -1,0 +1,23 @@
+#!/bin/sh
+application=$1
+
+# get a fresh backup of the database
+~/bin/get-digital-ocean-dump $application || exit 1
+
+# the directory that get-heroku-dump creates
+backup_dir="/data/collection/digital-ocean-db-backup/$application"
+
+# find the backup we just made. filename should be like 123456.dump, where the
+# number is a UNIX timestamp
+latest_backup=$(find "$backup_dir" -name "*.dump" -printf "%f\n" | sort -n --field-separator="." -k1 | tail -n 1)
+
+# this script assumes that you want to restore to the default postgres
+# instance, which should be running with no password. we also assume that you
+# only have one database ending in "_dev" or "_development". this works well if you're running
+# one postgres instance at a time with docker containers
+
+db_name=$(get-active-postgres-dev-database)
+
+pg_restore --verbose --clean --no-acl --no-owner -h 0.0.0.0 -U postgres -d $db_name "$backup_dir/$latest_backup"
+
+echo "restored from $backup_dir/$latest_backup to $db_name"
