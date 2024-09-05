@@ -1,0 +1,14 @@
+#!/bin/sh
+
+# Report the disk size of each branch, not including objects used by the
+# current branch. This can find outliers that are contributing to a bloated
+# repository size (e.g., because somebody accidentally committed large build
+# artifacts).
+
+git for-each-ref --format='%(refname)' |
+grep "refs/heads/" |
+while read branch
+do
+    size=$(git rev-list --disk-usage=human --objects HEAD..$branch)
+    echo "$size $branch"
+done
