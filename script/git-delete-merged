@@ -3,4 +3,4 @@
 # delete merged branches, except for master and the current branch
 
 set -o errexit
-git branch --merged | grep -v -E "(^\*|master)" | xargs --no-run-if-empty git branch -d
+git branch --merged | grep -v -E "(^\*|master|develop)" | xargs --no-run-if-empty git branch -d
