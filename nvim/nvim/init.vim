@@ -51,6 +51,10 @@ autocmd FileType gitcommit setlocal spell
 set complete+=kspell " Autocomplete with dictionary words when spell check is on
 set spellfile=$HOME/.vim/spell-en.utf-8.add
 
+" Enter: complete&close popup if visible (so next Enter works); else: break undo
+inoremap <silent><expr> <Cr> pumvisible() ?
+            \ deoplete#close_popup() : "<C-g>u<Cr>"
+
 call plug#begin('~/.vim/vim-plug')
 Plug 'https://github.com/ActivityWatch/aw-watcher-vim.git'
 Plug 'https://github.com/Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
@@ -59,16 +63,13 @@ Plug 'https://github.com/airblade/vim-gitgutter.git'
 Plug 'https://github.com/dense-analysis/ale.git'
 Plug 'https://github.com/editorconfig/editorconfig-vim.git'
 Plug 'https://github.com/janko/vim-test.git'
-Plug 'https://github.com/junegunn/fzf.git'
-Plug 'https://github.com/junegunn/fzf.vim.git'
 Plug 'https://github.com/luizribeiro/vim-cooklang.git', { 'for': 'cook' }
 Plug 'https://github.com/mbbill/undotree.git'
 Plug 'https://github.com/mfussenegger/nvim-dap.git'
 Plug 'https://github.com/morhetz/gruvbox.git'
 Plug 'https://github.com/nathangrigg/vim-beancount.git'
-Plug 'https://github.com/ryanoasis/vim-devicons.git'
+Plug 'nvim-tree/nvim-web-devicons'
 Plug 'https://github.com/sheerun/vim-polyglot'
-Plug 'https://github.com/stsewd/fzf-checkout.vim.git'
 Plug 'https://github.com/tpope/vim-abolish.git'
 Plug 'https://github.com/tpope/vim-commentary.git'
 Plug 'https://github.com/tpope/vim-eunuch.git'
@@ -77,6 +78,9 @@ Plug 'https://github.com/tpope/vim-sensible.git'
 Plug 'https://github.com/tpope/vim-sleuth.git'
 Plug 'https://github.com/tpope/vim-surround.git'
 Plug 'https://github.com/vim-airline/vim-airline.git'
+Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release' }
+Plug 'nvim-lua/plenary.nvim'
+Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.8' }
 call plug#end()
 
 let g:deoplete#enable_at_startup = 1
@@ -91,14 +95,15 @@ let g:vim_markdown_conceal = 0
 let g:vim_markdown_conceal_code_blocks = 0
 
 " keyboard shortcuts
-nmap <silent> <leader>p :Files<CR>
-nmap <silent> <C-p> :Files<CR>
+nmap <silent> <C-p> <cmd>Telescope git_files<CR>
+nmap <silent> <C-f> <cmd>Telescope live_grep<CR>
 
 " ale
 let g:ale_sign_error = '✘'
 let g:ale_sign_warning = '⚠'
-let g:ale_linters = {}
-let g:ale_linters.elixir = ['elixir-ls', 'credo']
+let g:ale_linters = {
+\   'elixir': ['lexical', 'mix', 'credo'],
+\}
 let g:ale_fix_on_save = 1
 let g:ale_lint_on_enter = 1
 let g:ale_fixers = {
@@ -110,7 +115,7 @@ let g:ale_fixers = {
 \   'ruby': ['rubocop'],
 \   'scss': ['stylelint'],
 \}
-let g:ale_elixir_elixir_ls_release = '/data/proj/forks/elixir-ls/release'
+let g:ale_elixir_lexical_release = '~/proj/forks/lexical/_build/dev/package/lexical/bin'
 let g:ale_elixir_credo_strict = 1
 
 set noshowmode " mode is shown by airline
