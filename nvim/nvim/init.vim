@@ -46,8 +46,7 @@ set undofile
 set undodir^=~/.vim/undo//
 
 " spellchecking
-autocmd FileType markdown setlocal spell
-autocmd FileType gitcommit setlocal spell
+set spell spelllang=en_us
 set complete+=kspell " Autocomplete with dictionary words when spell check is on
 set spellfile=$HOME/.vim/spell-en.utf-8.add
 
