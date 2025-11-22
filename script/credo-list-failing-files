@@ -1,0 +1,2 @@
+#!/bin/sh
+mix credo | rg -r '"$1",' '┃       ([^:]+):.*' | sort -u
