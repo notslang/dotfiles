@@ -21,3 +21,11 @@ require("telescope").setup{
 -- To get fzf loaded and working with telescope, you need to call
 -- load_extension, somewhere after setup function:
 require('telescope').load_extension('fzf')
+
+
+local my_grep = function()
+  local cword = vim.fn.expand("<cword>")
+  require("telescope.builtin").live_grep({default_text = cword})
+end
+
+vim.keymap.set('n', '<C-f>', my_grep)
